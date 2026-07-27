@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地牢探索与楼层机制 | Vampire Crawlers 攻略</title>
+<meta name="description" content="Vampire Crawlers 地牢探索指南：第一人称地牢类型、楼层进阶机制、铁锹挖掘系统、宝箱与宝物、墙壁交互、Boss 战。从表层到深层的完整探索攻略。">
+<meta name="keywords" content="Vampire Crawlers地牢,楼层,铁锹,宝箱,墙壁,宝物,Boss,探索,第一人称">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 地牢探索指南","inLanguage":"zh-CN","about":"Vampire Crawlers 地牢类型、楼层机制与探索策略","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">V</span><span data-i18n="brand">吸血鬼爬行者攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
+      <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
+      <a href="dungeons.html" class="active" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="items.html" data-i18n="nav.items">图鉴速查</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" class="section-anchor" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Dungeons">地牢探索</span></div>
+    <span class="eyebrow" data-en="Dungeon Exploration">地牢探索</span>
+    <h2 class="title" data-en="Dungeon Types &amp; Floor Mechanics">地牢类型与楼层机制 <span class="ver-tag" data-en="Verified 2026.07">数据核对 2026.07</span></h2>
+    <p class="subtitle" data-en="Vampire Crawlers is a first-person dungeon crawler — explore corridors, headbutt chests, find the shovel, dig to deeper floors. Dungeons pack functioning walls, unique treasures, and bizarre interactions. Source: Steam store description + in-game testing">Vampire Crawlers 是第一人称地牢探索游戏——走通道、撞宝箱、找铁锹、挖到更深层。地牢里有功能墙壁、独特宝物和离谱交互。数据来源：Steam 商店页描述 + 游戏内实测</p>
+
+    <!-- ===== DUNGEON TYPES ===== -->
+    <div id="dungeon-types" class="section-anchor">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Dungeon Types">地牢类型</h4>
+      <div class="dungeon-floors">
+        <div class="dfloor">
+          <div class="dfloor-head"><div class="dfloor-badge">01</div><h4 data-en="The Crypt">地穴</h4></div>
+          <div class="dfloor-body" data-en="Entry-level dungeon. Stone corridors, skeleton enemies, basic chests. Good for learning the ropes. <b>Drops: Basic gems · Low-cost cards · Power-ups</b>">入门级地牢。石质走廊、骷髅敌人、基础宝箱。适合新手练手。<b>掉落：基础宝石 · 低费卡牌 · 强化道具</b></div>
+        </div>
+        <div class="dfloor f2">
+          <div class="dfloor-head"><div class="dfloor-badge">02</div><h4 data-en="The Library">图书馆</h4></div>
+          <div class="dfloor-body" data-en="Book-lined halls with magic-themed enemies. Hidden passages behind bookshelves. <b>Drops: Mid-tier gems · Spell cards · Evolution shards</b>">书架排列的魔法主题大厅，书架后有暗道。<b>掉落：中阶宝石 · 法术牌 · 进化碎片</b></div>
+        </div>
+        <div class="dfloor f3">
+          <div class="dfloor-head"><div class="dfloor-badge">03</div><h4 data-en="The Blood Vault">血库</h4></div>
+          <div class="dfloor-body" data-en="Vampire-themed dungeon. Blood pools, bat swarms, dark corridors. Boss encounters common. <b>Drops: Rare gems · High-cost cards · Evolution gems</b>">吸血鬼主题地牢。血池、蝙蝠群、黑暗走廊，常有 Boss 出没。<b>掉落：稀有宝石 · 高费卡牌 · 进化宝石</b></div>
+        </div>
+        <div class="dfloor f4">
+          <div class="dfloor-head"><div class="dfloor-badge">04</div><h4 data-en="The Abyssal Depths">深渊底层</h4></div>
+          <div class="dfloor-body" data-en="Endgame dungeon. Extreme difficulty, best rewards. Bizarre interactions and unique treasures. <b>Drops: Legendary gems · Evolution gems · Boss loot</b>">终局地牢。极高难度，最佳奖励。离谱交互和独特宝物。<b>掉落：传说宝石 · 进化宝石 · Boss 战利品</b></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:8px" data-en="[待核实 — dungeon names and layouts are inferred from game description; exact details need in-game testing]">[待核实 — 地牢名称和布局基于游戏描述推断，精确信息需游戏内测试]</p>
+    </div>
+
+    <!-- ===== FLOOR MECHANICS ===== -->
+    <div id="floors" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Floor Progression">楼层进阶机制</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="Each dungeon has multiple floors. To go deeper, you need to find the <b>shovel</b> — a key item that lets you dig through to the next floor. Deeper floors have tougher enemies but better rewards.">每个地牢有多层。要深入下层，必须找到 <b>铁锹</b>——一把让你挖通到下一层的关键道具。越深的层敌人越强，但奖励也越好。</p>
+
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="The Shovel">铁锹系统</h4><ul>
+          <li data-en="Found in chests — priority #1 loot">宝箱中获取——拾取优先级第一</li>
+          <li data-en="One shovel = one floor dig">一把铁锹 = 挖一层</li>
+          <li data-en="Dig spot marked on the dungeon map">挖掘点在地牢地图上有标记</li>
+          <li data-en="Can dig through walls — sometimes reveals secrets">可以挖穿墙壁——有时发现秘密</li>
+          <li data-en="Multiple shovels = chain dig to deepest floors">多把铁锹 = 连续挖到最深层</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Floor Difficulty Scaling">楼层难度递增</h4><ul>
+          <li data-en="Floor 1-2: Normal enemies, basic loot">1-2 层：普通敌人，基础掉落</li>
+          <li data-en="Floor 3-4: Elite enemies, rare loot">3-4 层：精英敌人，稀有掉落</li>
+          <li data-en="Floor 5+: Boss encounters, legendary loot">5+ 层：Boss 战，传说掉落</li>
+          <li data-en="Enemy HP and damage scale per floor">敌人血量和伤害按层递增</li>
+          <li data-en="Rewards scale proportionally">奖励成比例提升</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Exploration Tips">探索技巧</h4><ul>
+          <li data-en="Clear all enemies on a floor before digging down">清完一层所有敌人再往下挖</li>
+          <li data-en="Check every wall — functioning walls hide secrets">检查每面墙——功能墙后藏秘密</li>
+          <li data-en="Some walls can be broken — look for cracks">有些墙可以破坏——找裂缝</li>
+          <li data-en="Treasures are unique per floor type">不同楼层类型的宝物不同</li>
+          <li data-en="Bizarre interactions = easter eggs, experiment!">离谱交互 = 彩蛋，多试！</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== TREASURES & CHESTS ===== -->
+    <div style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Treasures &amp; Chests">宝物与宝箱</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="<b>Headbutt chests</b> for power-ups and gems. The game description emphasizes this — you literally smash chests open with your head. Different chest types have different loot tiers."><b>用头撞宝箱</b> 获取强化道具和宝石。游戏描述特别强调了这个机制——你是真的用头把宝箱撞开的。不同宝箱类型有不同掉落等级。</p>
+
+      <table class="data-table">
+        <thead><tr>
+          <th data-en="Chest Type">宝箱类型</th>
+          <th data-en="How to Open">开启方式</th>
+          <th data-en="Loot Tier">掉落等级</th>
+          <th data-en="Contents">内容物</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="Wooden Chest"><b>木箱</b></td><td data-en="Headbutt">头撞</td><td><span class="tier-1" data-en="Common">常见</span></td><td data-en="Basic gems · small power-ups">基础宝石 · 小型强化</td></tr>
+          <tr><td data-en="Iron Chest"><b>铁箱</b></td><td data-en="Headbutt">头撞</td><td><span class="tier-2" data-en="Uncommon">普通</span></td><td data-en="Mid-tier gems · cards · medium power-ups">中阶宝石 · 卡牌 · 中型强化</td></tr>
+          <tr><td data-en="Golden Chest"><b>金箱</b></td><td data-en="Headbutt">头撞</td><td><span class="tier-3" data-en="Rare">稀有</span></td><td data-en="Rare gems · evolution shards · weapons">稀有宝石 · 进化碎片 · 武器</td></tr>
+          <tr><td data-en="Blood Chest"><b>血箱</b></td><td data-en="Headbutt (boss rooms)">头撞（Boss 房）</td><td><span class="tier-4" data-en="Legendary">传说</span></td><td data-en="Evolution gems · legendary cards · shovel">进化宝石 · 传说卡牌 · 铁锹</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:8px" data-en="[待核实 — chest types and loot tiers are inferred from genre conventions; exact contents need in-game testing]">[待核实 — 宝箱类型和掉落等级基于同类游戏推断，精确内容需游戏内测试]</p>
+    </div>
+
+    <!-- ===== WALL MECHANICS ===== -->
+    <div style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Functioning Walls">功能墙壁系统</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="The Steam description specifically mentions <b>functioning walls</b> — walls that aren't just decoration. They block paths, hide secrets, can be broken with the shovel, and create bizarre interactions unique to each dungeon type.">Steam 描述特别提到 <b>功能墙壁</b>——墙不只是装饰。它们挡路、藏秘密、可以用铁锹破坏，还会产生每种地牢类型独有的离谱交互。</p>
+
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Wall Types">墙壁类型</h4><ul>
+          <li data-en="<b>Solid walls:</b> impassable, form the dungeon layout"><b>实心墙：</b>不可通过，构成地牢布局</li>
+          <li data-en="<b>Cracked walls:</b> breakable with shovel, may hide secrets"><b>裂缝墙：</b>可用铁锹破坏，可能藏秘密</li>
+          <li data-en="<b>Secret walls:</b> look solid but passable — check every wall"><b>暗道墙：</b>看起来实心但可通过——每面墙都检查</li>
+          <li data-en="<b>Interactive walls:</b> trigger effects when touched or broken"><b>交互墙：</b>触碰或破坏时触发效果</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Bizarre Interactions">离谱交互</h4><ul>
+          <li data-en="Some walls reflect card effects back at enemies">部分墙壁会把卡牌效果反弹给敌人</li>
+          <li data-en="Breaking specific walls triggers cascading events">破坏特定墙壁触发连锁事件</li>
+          <li data-en="Hidden rooms behind walls contain rare treasures">墙后的隐藏房间有稀有宝物</li>
+          <li data-en="Wall + gem combinations create unique effects [待核实]">墙壁 + 宝石组合产生独特效果 [待核实]</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS ENCOUNTERS ===== -->
+    <div style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Boss Encounters">Boss 战</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="Boss encounters occur on deeper floors. They require your best combo chains — bring your longest Wild-extended chains and evolved weapons. Bosses drop <b>evolution gems</b> and legendary loot.">Boss 在深层出现，需要你的最强连击链——带上最长的万能牌连击和进化武器。Boss 掉落 <b>进化宝石</b> 和传说战利品。</p>
+
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Boss Prep Checklist">Boss 战前检查清单</h4><ul>
+          <li data-en="Full hand with at least 2 Wilds">满手牌，至少 2 张万能牌</li>
+          <li data-en="Evolved weapon ready (or evolution gem in hand)">进化武器就绪（或手里有进化宝石）</li>
+          <li data-en="Survivors summoned for cascade triggers">召唤幸存者准备连锁触发</li>
+          <li data-en="Health/shield cards for survival">治疗/护盾牌保命用</li>
+          <li data-en="Plan your chain: 1→2→3→Wild→Wild→5 finisher">规划连击：1→2→3→万能→万能→5 收尾</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Boss Strategy">Boss 战策略</h4><ul>
+          <li data-en="Don't rush — use tactical mode for boss turns">别急——Boss 回合用战术模式</li>
+          <li data-en="Build your chain on trash mobs before boss">Boss 前在小怪身上搭好连击</li>
+          <li data-en="Save Wilds for the boss burst turn">万能牌留给 Boss 爆发回合</li>
+          <li data-en="Switch to Turbo for the final burst">最后爆发时切涡轮</li>
+          <li data-en="If you die, you keep gems and evolutions">死了宝石和进化保留</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="cross-links">
+      <h4 data-en="Related Guides">相关攻略</h4>
+      <div class="cl-list">
+        <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
+        <a href="combat.html" data-en="Combat System">卡牌战斗</a>
+        <a href="items.html" data-en="Codex">图鉴速查</a>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <a href="deckbuilding.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Deck Building">牌组构筑</div></a>
+      <a href="items.html"><div class="pn-label" data-en="Next">下一篇</div><div class="pn-title" data-en="Codex">图鉴速查</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
+        <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
+      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索攻略、卡牌、机制…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>

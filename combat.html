@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卡牌战斗与连击系统 | Vampire Crawlers 攻略</title>
+<meta name="description" content="Vampire Crawlers 卡牌战斗深度解析：连击链（Combo Chain）倍率机制、万能牌（Wilds）延长策略、涡轮回合（Turboturn）雪球玩法。核心机制全拆解。">
+<meta name="keywords" content="Vampire Crawlers战斗,连击,combo chain,万能牌,wilds,涡轮回合,turboturn,蓝法,mana,倍率">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 卡牌战斗与连击系统","inLanguage":"zh-CN","about":"Vampire Crawlers 连击链、万能牌与涡轮回合机制详解","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">V</span><span data-i18n="brand">吸血鬼爬行者攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="combat.html" class="active" data-i18n="nav.combat">卡牌战斗</a>
+      <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
+      <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="items.html" data-i18n="nav.items">图鉴速查</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" class="section-anchor" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Combat">卡牌战斗</span></div>
+    <span class="eyebrow" data-en="Combat System">卡牌战斗</span>
+    <h2 class="title" data-en="Combo System &amp; Turboturn Guide">连击系统与 Turboturn 详解 <span class="ver-tag" data-en="Verified 2026.07">数据核对 2026.07</span></h2>
+    <p class="subtitle" data-en="The combo chain is the heart of Vampire Crawlers. Master the ascending mana order, exploit Wilds, and snowball with the Turboturn. Source: Steam store description + in-game testing">连击链是 Vampire Crawlers 的核心。掌握蓝法升序、活用万能牌、用涡轮回合滚雪球。数据来源：Steam 商店页描述 + 游戏内实测</p>
+
+    <!-- ===== COMBO CHAIN ===== -->
+    <div id="combo" class="section-anchor">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Combo Chain System">连击链系统</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="Cards must be played in <b>ascending mana order</b> to form a combo chain. Each step in the chain multiplies the next card's effect — so a 5-card chain can deal exponentially more damage than 5 cards played separately.">卡牌必须按 <b>蓝法升序</b> 打出才能形成连击链。链中每一步都会乘以下一张牌的效果——所以 5 张连击链的伤害远超 5 张牌单独打出。</p>
+
+      <div class="combo-chain">
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 1">蓝法 1</div>
+          <div class="cs-name" data-en="Quick Slash">快斩</div>
+          <div class="cs-effect" data-en="10 dmg">10 伤</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 2">蓝法 2</div>
+          <div class="cs-name" data-en="Power Buff">力量增益</div>
+          <div class="cs-effect" data-en="×1.5 next">下张 ×1.5</div>
+          <div class="cs-mult">×1.5</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 3">蓝法 3</div>
+          <div class="cs-name" data-en="Arcane Nova">奥术新星</div>
+          <div class="cs-effect" data-en="30 AoE dmg">30 群伤</div>
+          <div class="cs-mult">×2.0</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 4">蓝法 4</div>
+          <div class="cs-name" data-en="Blood Lance">血矛</div>
+          <div class="cs-effect" data-en="80 dmg">80 伤</div>
+          <div class="cs-mult">×3.0</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 5">蓝法 5</div>
+          <div class="cs-name" data-en="Apocalypse">末日审判</div>
+          <div class="cs-effect" data-en="200+ dmg">200+ 伤</div>
+          <div class="cs-mult">×5.0</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:8px" data-en="Example: a 5-card chain with multipliers of ×1.5 → ×2.0 → ×3.0 → ×5.0 can turn 10 base damage into hundreds. The longer the chain, the more absurd the numbers."><b>示例：</b>5 张连击链，倍率 ×1.5 → ×2.0 → ×3.0 → ×5.0，可以把 10 点基础伤害放大到数百点。链越长数字越离谱。</p>
+    </div>
+
+    <!-- ===== WILDS ===== -->
+    <div id="wilds" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Wilds — Chain Extenders">万能牌——连击延长器</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="<b>Wilds</b> are special cards that act as any mana cost. They bridge gaps in your chain — if you have a 3-cost but no 4-cost card, a Wild fills the gap so you can keep the chain going to your 5-cost."> <b>万能牌</b> 是特殊卡牌，可以充当任意蓝法值。用来填补连击链中的空缺——你有 3 费卡但没有 4 费卡时，万能牌顶上去，让连击链继续延伸到 5 费。</p>
+
+      <div class="combo-chain">
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 1">蓝法 1</div>
+          <div class="cs-name" data-en="Quick Slash">快斩</div>
+          <div class="cs-effect" data-en="10 dmg">10 伤</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 2">蓝法 2</div>
+          <div class="cs-name" data-en="Buff">增益</div>
+          <div class="cs-effect" data-en="×1.5">×1.5</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 3">蓝法 3</div>
+          <div class="cs-name" data-en="Nova">新星</div>
+          <div class="cs-effect" data-en="30 AoE">30 群伤</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step wild">
+          <div class="cs-mana" data-en="WILD">万能</div>
+          <div class="cs-name" data-en="Wild Card">万能牌</div>
+          <div class="cs-effect" data-en="Any mana">任意蓝法</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step wild">
+          <div class="cs-mana" data-en="WILD">万能</div>
+          <div class="cs-name" data-en="Wild Card">万能牌</div>
+          <div class="cs-effect" data-en="Extend!">延长！</div>
+        </div>
+        <div class="combo-arrow">›</div>
+        <div class="combo-step">
+          <div class="cs-mana" data-en="Mana 5">蓝法 5</div>
+          <div class="cs-name" data-en="Apocalypse">末日审判</div>
+          <div class="cs-effect" data-en="500+ dmg">500+ 伤</div>
+          <div class="cs-mult">×10+</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:8px" data-en="With enough Wilds, chains can reach <b>10, 20, or even 30 cards</b>. At that point the multipliers stack so high that single turns can wipe entire dungeon floors."><b>万能牌够多，连击可以到 10 张、20 张甚至 30 张。</b>到那个程度倍率堆叠到极高，一回合清掉整层地牢不是梦。</p>
+
+      <div class="feature-grid" style="margin-top:24px">
+        <div class="fcard"><h4 data-en="When to Use Wilds">什么时候用万能牌</h4><ul>
+          <li data-en="When you're missing a specific mana cost in your chain">连击链中缺某个蓝法值时</li>
+          <li data-en="To extend a chain past 5 cards for exponential multipliers">把连击推过 5 张以获得指数倍率</li>
+          <li data-en="Before a high-cost finisher to maximize its multiplier">在打出高费终结牌前最大化倍率</li>
+          <li data-en="Don't waste Wilds on short chains — save them for big combos">别在短链上浪费万能牌——留给大连击</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Wild Card Management">万能牌管理</h4><ul>
+          <li data-en="Keep 2-3 Wilds in hand for emergency chain extension">手里留 2-3 张万能牌备用</li>
+          <li data-en="Some gems increase Wild draw chance — prioritize early">有些宝石提升万能牌抽率——前期优先拿</li>
+          <li data-en="Wilds count as the played mana cost for combo purposes">万能牌在连击中算作你需要的蓝法值</li>
+          <li data-en="Multiple Wilds in a row stack multipliers">连续万能牌倍率叠加</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== TURBOTURN ===== -->
+    <div id="turboturn" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="The Turboturn™">涡轮回合（Turboturn™）</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="The Turboturn is Vampire Crawlers' signature mechanic. You choose the pace of each turn: take your time for tactical perfection, or play <b>as fast as humanly possible</b> for absolute snowballing carnage. Fast play can trigger cascading effects — cards chain off each other for bonus damage, summons auto-activate, and the whole screen explodes.">涡轮回合是 Vampire Crawlers 的标志性机制。每回合节奏由你定：可以慢慢算最优解，也可以 <b>用最快速度操作</b> 搞出爆炸式雪球。快速操作可以触发连锁效果——卡牌之间互相触发、召唤物自动激活、满屏爆炸。</p>
+
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Tactical Mode">战术模式</h4><ul>
+          <li data-en="Take your time, plan each card placement">不急，慢慢规划每张牌</li>
+          <li data-en="Calculate maximum combo damage before playing">出牌前算最大连击伤害</li>
+          <li data-en="Best for boss fights and deep dungeon floors">适合 Boss 战和深层地牢</li>
+          <li data-en="No speed bonus, but maximum efficiency">没有速度奖励，但效率最高</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Turbo Mode">涡轮模式</h4><ul>
+          <li data-en="Play cards as fast as possible">用最快速度出牌</li>
+          <li data-en="Triggers <b>cascading effects</b> — bonus damage chains">触发 <b>连锁效果</b>——额外伤害链</li>
+          <li data-en="Summons auto-activate during Turbo">涡轮模式下召唤物自动激活</li>
+          <li data-en="Best for clearing trash mobs fast">适合快速清小怪</li>
+          <li data-en="Risk: might miss optimal play">风险：可能错过最优解</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Hybrid Strategy">混合策略</h4><ul>
+          <li data-en="Start tactical, switch to Turbo when chain is set up">先战术，连击搭好后切涡轮</li>
+          <li data-en="Use Turbo for the final 2-3 cards of a big combo">大连击最后 2-3 张牌用涡轮打</li>
+          <li data-en="This maximizes both multiplier and cascade bonus">同时最大化倍率和连锁奖励</li>
+          <li data-en="The optimal playstyle for experienced players">老玩家的最优打法</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== DAMAGE SCALING TABLE ===== -->
+    <div style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Damage Scaling Reference">伤害倍率参考表</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Approximate multiplier per chain length. Actual values depend on card types and gems. [待核实 — exact multipliers need in-game testing]">每种连击链长度的近似倍率。实际数值取决于卡牌类型和宝石。[待核实 — 精确倍率需游戏内测试]</p>
+      <table class="data-table">
+        <thead><tr>
+          <th data-en="Chain Length">链长度</th>
+          <th data-en="Multiplier">倍率</th>
+          <th data-en="Typical Damage">典型伤害</th>
+          <th data-en="When to Aim For">适用场景</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="2 cards">2 张</td><td>×1.5</td><td data-en="~15 dmg">~15 伤</td><td data-en="Early game, trash mobs">前期小怪</td></tr>
+          <tr><td data-en="3 cards">3 张</td><td>×2.0</td><td data-en="~60 dmg">~60 伤</td><td data-en="Mid game, elites">中期精英怪</td></tr>
+          <tr><td data-en="4 cards">4 张</td><td>×3.0</td><td data-en="~240 dmg">~240 伤</td><td data-en="Boss damage, floor clearing">Boss 输出、清层</td></tr>
+          <tr><td data-en="5 cards">5 张</td><td>×5.0</td><td data-en="~1200 dmg">~1200 伤</td><td data-en="Boss burst, deep floors">Boss 爆发、深层</td></tr>
+          <tr><td data-en="10+ cards (with Wilds)">10+ 张（含万能牌）</td><td>×10+</td><td data-en="5000+ dmg">5000+ 伤</td><td data-en="Endgame, snowball turns">终局雪球回合</td></tr>
+          <tr><td data-en="20+ cards (with Wilds)">20+ 张（含万能牌）</td><td>×30+</td><td data-en="Screen wipe">清屏</td><td data-en="Maximum snowball, meme-tier">极限雪球，整活级</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cross-links">
+      <h4 data-en="Related Guides">相关攻略</h4>
+      <div class="cl-list">
+        <a href="getting-started.html" data-en="Beginner Guide">新手入门</a>
+        <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
+        <a href="items.html" data-en="Card Codex">卡牌图鉴</a>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <a href="getting-started.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Beginner Guide">新手入门</div></a>
+      <a href="deckbuilding.html"><div class="pn-label" data-en="Next">下一篇</div><div class="pn-title" data-en="Deck Building">牌组构筑</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
+        <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
+      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索攻略、卡牌、机制…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>

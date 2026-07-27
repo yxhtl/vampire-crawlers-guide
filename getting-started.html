@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新手入门指南 | Vampire Crawlers 攻略</title>
+<meta name="description" content="Vampire Crawlers 新手入门攻略：从理解蓝法顺序到通关第一个地牢，回合制卡牌地牢爬行者保姆级上手流程，含常见错误避坑与优先级指引。">
+<meta name="keywords" content="Vampire Crawlers新手,入门攻略,蓝法顺序,连击,第一局,Turboturn,地牢,卡牌">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 新手入门指南","inLanguage":"zh-CN","about":"Vampire Crawlers 新手入门攻略与回合流程","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">V</span><span data-i18n="brand">吸血鬼爬行者攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" class="active" data-i18n="nav.getting-started">新手入门</a>
+      <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
+      <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
+      <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="items.html" data-i18n="nav.items">图鉴速查</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" class="section-anchor" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Beginner">新手入门</span></div>
+    <span class="eyebrow" data-en="Beginner">新手入门</span>
+    <h2 class="title" data-en="From Zero to Dungeon Clear">从零开始到通关地牢</h2>
+    <p class="subtitle" data-en="Never played a deckbuilder? No problem. Follow this step-by-step path to understand the core loop, survive your first dungeon, and start building busted combos.">没玩过卡牌构筑游戏？没关系。跟着这条主线走，理解核心循环、通关第一个地牢、开始打出超模连击。</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">01</div>
+        <div class="tl-body">
+          <h4 data-en="Step 1 · Understand the Core Loop">第一步 · 理解核心循环</h4>
+          <ul>
+            <li data-en="Vampire Crawlers is a &lt;b&gt;turn-based roguelite deckbuilder&lt;/b&gt; — you play cards, kill monsters, level up, explore dungeons, repeat">Vampire Crawlers 是一个 <b>回合制肉鸽卡牌构筑游戏</b>——打牌、杀怪、升级、探索地牢、循环往复</li>
+            <li data-en="Each turn you draw a hand of cards. Cards have &lt;b&gt;mana costs&lt;/b&gt; (1, 2, 3, 4, 5+)">每回合抽一把牌。卡牌有 <b>蓝法消耗</b>（1、2、3、4、5+）</li>
+            <li data-en="The core twist: cards must be played in &lt;b&gt;ascending mana order&lt;/b&gt; to trigger combos">核心机制：卡牌必须按 <b>蓝法升序</b> 打出才能触发连击</li>
+            <li data-en="Playing a 1-cost → 2-cost → 3-cost chain multiplies each card's effect">打 1 费 → 2 费 → 3 费的连锁会让每张牌的效果倍增</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">02</div>
+        <div class="tl-body">
+          <h4 data-en="Step 2 · Learn the Combo Chain">第二步 · 掌握连击链</h4>
+          <ul>
+            <li data-en="A &lt;b&gt;combo chain&lt;/b&gt; is a sequence of cards played in ascending mana order"> <b>连击链</b> 就是按蓝法升序依次打出的一串卡牌</li>
+            <li data-en="Example: 1-cost attack → 2-cost buff → 3-cost AoE → 4-cost nuke">例如：1 费攻击 → 2 费增益 → 3 费群攻 → 4 费核弹</li>
+            <li data-en="Each step in the chain &lt;b&gt;multiplies&lt;/b&gt; the next card's damage/effect">链中每一步都会 <b>乘以</b> 下一张牌的伤害/效果</li>
+            <li data-en="Longer chains = exponentially more damage. A 5-card chain can one-shot most enemies">链越长伤害指数增长。5 张连击链可以秒杀大部分敌人</li>
+            <li data-en="See the &lt;a class='xref' href='combat.html#combo'&gt;Combat page&lt;/a&gt; for the full combo mechanics">完整连击机制详见 <a class='xref' href='combat.html#combo'>卡牌战斗页</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">03</div>
+        <div class="tl-body">
+          <h4 data-en="Step 3 · Use Wilds to Extend Chains">第三步 · 用万能牌延长连击</h4>
+          <ul>
+            <li data-en="&lt;b&gt;Wilds&lt;/b&gt; are special cards that act as any mana cost — they bridge gaps in your chain"><b>万能牌</b> 是特殊卡牌，可以充当任意蓝法值——用来填补连击链中的空缺</li>
+            <li data-en="Stuck at 3-cost with no 4-cost card? Drop a Wild, then play your 5-cost">手里 3 费打完没有 4 费？插一张万能牌，然后直接打 5 费</li>
+            <li data-en="With enough Wilds, you can push a chain to &lt;b&gt;10, 20, even 30 cards&lt;/b&gt;">万能牌够多，连击可以推到 <b>10 张、20 张甚至 30 张</b></li>
+            <li data-en="This is the key to &lt;b&gt;snowballing&lt;/b&gt; — longer chains = more multipliers = game-breaking damage">这就是 <b>滚雪球</b> 的关键——链越长，倍率越多，伤害越离谱</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">04</div>
+        <div class="tl-body">
+          <h4 data-en="Step 4 · Explore the Dungeon">第四步 · 探索地牢</h4>
+          <ul>
+            <li data-en="After each fight, explore the &lt;b&gt;first-person dungeon&lt;/b&gt; — move through corridors, find chests">每场战斗结束后，在 <b>第一人称地牢</b> 中探索——走通道、开宝箱</li>
+            <li data-en="&lt;b&gt;Headbutt chests&lt;/b&gt; for power-ups and gems to augment your cards">用 <b>头撞宝箱</b> 获得强化道具和宝石，用来增幅你的卡牌</li>
+            <li data-en="Look for the &lt;b&gt;shovel&lt;/b&gt; — it lets you dig to the next floor for better rewards">寻找 <b>铁锹</b>——拿到后可以挖到下一层，获取更好的奖励</li>
+            <li data-en="Walls are functional — some hide secrets, some block your path, some can be broken">墙壁有功能——有的藏秘密，有的挡路，有的可以破坏</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">05</div>
+        <div class="tl-body">
+          <h4 data-en="Step 5 · Level Up &amp; Gain Cards">第五步 · 升级与获取卡牌</h4>
+          <ul>
+            <li data-en="Accumulate &lt;b&gt;experience&lt;/b&gt; from kills to level up">击杀敌人积累 <b>经验</b>，升级后获得新卡</li>
+            <li data-en="Each level-up offers a choice of &lt;b&gt;new cards&lt;/b&gt; — pick ones that synergize with your deck">每次升级可选择 <b>新卡牌</b>——选和你现有牌组联动的</li>
+            <li data-en="Early game: prioritize &lt;b&gt;low-cost cards&lt;/b&gt; (1-2 mana) to start chains reliably">前期优先选 <b>低费卡</b>（1-2 蓝），保证能稳定起手连击</li>
+            <li data-en="Don't forget &lt;b&gt;gems&lt;/b&gt; from chests — they permanently augment specific cards">别忘了宝箱里的 <b>宝石</b>——它们可以永久强化特定卡牌</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">06</div>
+        <div class="tl-body">
+          <h4 data-en="Step 6 · Master the Turboturn">第六步 · 掌握涡轮回合</h4>
+          <ul>
+            <li data-en="The &lt;b&gt;Turboturn™&lt;/b&gt; is the game's signature mechanic — play your turn as fast as possible"><b>涡轮回合（Turboturn™）</b> 是游戏标志性机制——用最快速度打完一回合</li>
+            <li data-en="You choose the pace: take your time to be tactical, or blitz for snowballing carnage">节奏由你定：可以慢慢算最优解，也可以极速操作滚雪球</li>
+            <li data-en="Fast turns can trigger &lt;b&gt;cascading effects&lt;/b&gt; — effects chain off each other for bonus damage">快速回合可以触发 <b>连锁效果</b>——效果之间互相触发，额外加伤</li>
+            <li data-en="Early on, don't worry about speed — focus on understanding the combo system first">新手前期不用急，先理解连击系统，速度后面再练</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">07</div>
+        <div class="tl-body">
+          <h4 data-en="Step 7 · Clear Your First Dungeon">第七步 · 通关第一个地牢</h4>
+          <ul>
+            <li data-en="A full dungeon run: fight monsters → explore → level up → find shovel → dig to next floor → repeat">完整地牢流程：打怪 → 探索 → 升级 → 找铁锹 → 挖到下层 → 循环</li>
+            <li data-en="Boss encounters at deeper floors — bring your best combo chain ready">深层有 Boss 战——备好你的最强连击链</li>
+            <li data-en="Death is not the end (roguelite) — you keep some progress and start a new run with better understanding">死了不是结束（肉鸽机制）——保留部分进度，带着经验重新开局</li>
+            <li data-en="After clearing, try &lt;a class='xref' href='deckbuilding.html'&gt;deck building strategies&lt;/a&gt; for deeper runs">通关后可以尝试 <a class='xref' href='deckbuilding.html'>牌组构筑策略</a> 挑战更深层</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-grid" style="margin-top:40px">
+      <div class="fcard"><h4 data-en="Common Beginner Mistakes">新手常见错误</h4><ul>
+        <li data-en="Playing cards out of mana order — breaks the combo chain">不按蓝法顺序出牌——直接断连击链</li>
+        <li data-en="Hoarding Wilds instead of using them to extend chains">攒着万能牌不用——该延长连击时就用</li>
+        <li data-en="Ignoring dungeon exploration — chests have crucial power-ups">不探索地牢——宝箱里有关键强化道具</li>
+        <li data-en="Picking random cards on level-up — always think about synergy">升级时乱选卡——一定要想联动</li>
+        <li data-en="Forgetting to augment cards with gems">忘记用宝石强化卡牌</li>
+      </ul></div>
+      <div class="fcard"><h4 data-en="Card Priority Guide">选卡优先级</h4><ul>
+        <li data-en="Early: 1-cost and 2-cost cards (chain starters)">前期：1 费和 2 费卡（起手用）</li>
+        <li data-en="Mid: 3-cost AoE and buff cards (chain extenders)">中期：3 费群攻和增益卡（延长链）</li>
+        <li data-en="Late: 4-5 cost finishers (chain enders, big damage)">后期：4-5 费终结牌（收尾大伤害）</li>
+        <li data-en="Always grab at least 1-2 Wilds per run">每局至少拿 1-2 张万能牌</li>
+        <li data-en="Look for cards that summon survivors — they trigger cascades">找能召唤幸存者的卡——会触发连锁效果</li>
+      </ul></div>
+      <div class="fcard"><h4 data-en="Dungeon Exploration Tips">地牢探索技巧</h4><ul>
+        <li data-en="Check every wall — some hide secret passages">每面墙都检查——有的藏暗道</li>
+        <li data-en="Headbutt ALL chests — gems and power-ups inside">所有宝箱都头撞——里面有宝石和道具</li>
+        <li data-en="The shovel is priority #1 — it unlocks deeper floors">铁锹优先级最高——解锁更深层</li>
+        <li data-en="Some interactions are bizarre — experiment and have fun">有些交互很离谱——多试多玩</li>
+        <li data-en="Weapon evolutions need specific card combinations — plan ahead">武器进化需要特定卡牌组合——提前规划</li>
+      </ul></div>
+    </div>
+
+    <div class="cross-links">
+      <h4 data-en="Related Guides">相关攻略</h4>
+      <div class="cl-list">
+        <a href="combat.html" data-en="Combat System">卡牌战斗系统</a>
+        <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
+        <a href="dungeons.html" data-en="Dungeon Exploration">地牢探索</a>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <a href="index.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Home">首页</div></a>
+      <a href="combat.html"><div class="pn-label" data-en="Next">下一篇</div><div class="pn-title" data-en="Combat System">卡牌战斗系统</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
+        <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
+      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索攻略、卡牌、机制…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>
