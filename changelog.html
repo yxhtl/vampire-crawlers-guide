@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>更新日志 | Vampire Crawlers 攻略</title>
+<meta name="description" content="Vampire Crawlers 攻略站更新日志：版本记录、新功能上线、内容更新与修复记录。">
+<meta name="keywords" content="Vampire Crawlers,更新日志,changelog,版本记录">
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d0817">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 攻略站更新日志","inLanguage":"zh-CN","about":"站点版本更新记录","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">V</span><span data-i18n="brand">吸血鬼爬行者攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
+      <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
+      <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="bosses.html" data-i18n="nav.bosses">Boss攻略</a>
+      <a href="items.html" data-i18n="nav.items">图鉴速查</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" class="section-anchor" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Changelog">更新日志</span></div>
+    <span class="eyebrow" data-en="Changelog">更新日志</span>
+    <h2 class="title" data-en="Site Update History">站点更新历史</h2>
+    <p class="subtitle" data-en="Track every update to the guide — new features, content additions, and bug fixes.">记录攻略站的每一次更新——新功能上线、内容新增与问题修复。</p>
+
+    <div class="changelog-list">
+
+      <div class="changelog-entry" style="border-left-color:var(--gold)">
+        <span class="cl-version">v2.4.0</span>
+        <span class="cl-date" data-en="2026-07-27">2026-07-27</span>
+        <ul class="cl-list">
+          <li><b>进化路线全面更新</b><span class="cl-tag-new">NEW</span> <span data-en="— Replaced 4 fabricated evolution routes with 17 real ones confirmed from Steam achievements (Evo_ prefix)">— 4 条编造进化路线替换为 17 条 Steam 成就确认的真实路线</span></li>
+          <li><b>宝石表更新</b><span class="cl-tag-fix">FIX</span> <span data-en="— Replaced 6 fabricated gems with real ones from achievements; added note listing all 47 confirmed gem names">— 6 个编造宝石替换为成就确认的真实名，标注 47 种宝石全名单</span></li>
+          <li><b>遗物系统新增</b><span class="cl-tag-new">NEW</span> <span data-en="— Added Relics section to deckbuilding page with 13 relics confirmed from Steam achievements">— 牌组构筑页新增遗物系统章节，13 个遗物来自 Steam 成就</span></li>
+          <li><b>角色列表新增</b><span class="cl-tag-new">NEW</span> <span data-en="— Added 20 playable characters to getting-started page, all confirmed from Steam achievements">— 新手入门页新增 20 个可玩角色列表，全部来自 Steam 成就</span></li>
+          <li><b>BUILD_DATA 更新</b><span class="cl-tag-fix">FIX</span> <span data-en="— Updated common.js: replaced fabricated weapon names (Magic Wand→Fire Wand, Axe→Cross) and added 3 new weapons (Garlic, Lightning Ring, Runetracer); replaced 6 fabricated gems with real ones, added 3 more (Steal, Retain, Refresh)">— common.js 更新：武器名修正（魔杖→火杖，战斧→十字架），新增 3 种武器；6 个编造宝石替换为真实名，新增 3 颗</span></li>
+          <li><b>搜索索引扩充</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Added search index entries for characters and relics sections">— 搜索索引新增角色和遗物条目</span></li>
+          <li><b>首页统计更新</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Hero stats: 31→37 codex entries (24 cards + 13 gems)">— 首页统计：31→37 图鉴条目（24 卡牌 + 13 宝石）</span></li>
+          <li><b>SW 缓存版本递增</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Service Worker cache version bumped to v2.4">— Service Worker 缓存版本递增至 v2.4</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry" style="border-left-color:var(--gold)">
+        <span class="cl-version">v2.3.0</span>
+        <span class="cl-date" data-en="2026-07-27">2026-07-27</span>
+        <ul class="cl-list">
+          <li><b>完整成就列表获取</b><span class="cl-tag-new">NEW</span> <span data-en="— Fetched all 161 Steam achievements via GetGlobalAchievementPercentagesForApp API, revealing real dungeon/character/gem/weapon/relic names">— 通过 Steam API 获取全部 161 个成就，揭示真实地牢/角色/宝石/武器/遗物名称</span></li>
+          <li><b>地牢名全面修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Replaced fabricated dungeon names with real names from achievements: Mad Forest, Tiny Bridge, Dairy Plant, Gallo Tower, Cappella Magna (Inlaid Library was already correct)">— 全部地牢名替换为成就确认的真实名称：疯狂森林、锦钿书库、小桥、乳品厂、加洛塔、大教堂</span></li>
+          <li><b>新增 2 个地牢</b><span class="cl-tag-new">NEW</span> <span data-en="— Added Tiny Bridge and Cappella Magna dungeons; hero stats updated 4→6">— 新增小桥和大教堂地牢；首页统计 4→6</span></li>
+          <li><b>免责声明诚实化</b><span class="cl-tag-fix">FIX</span> <span data-en="— Reverted misleading 'based on Steam store description' to honest wording: confirmed names from achievements, specific values not verified in-game">— 将误导性的'基于 Steam 商店页与玩家社区整理'改回诚实措辞：名称来自成就列表，数值未经游戏内核实</span></li>
+          <li><b>死链修复</b><span class="cl-tag-fix">FIX</span> <span data-en="— Removed dead 'About' footer link that duplicated the changelog link">— 删除 footer 中重复指向 changelog 的'关于本站'死链</span></li>
+          <li><b>Boss disclaimer 精确化</b><span class="cl-tag-fix">FIX</span> <span data-en="— Clarified that only Door Queen is confirmed from reviews; other boss names and all values are inferred">— 明确仅门扉女王来自玩家评论确认，其余 Boss 名称和数值均为推断</span></li>
+          <li><b>SW 缓存版本递增</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Service Worker cache version bumped to v2.3">— Service Worker 缓存版本递增至 v2.3</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry" style="border-left-color:var(--gold)">
+        <span class="cl-version">v2.2.0</span>
+        <span class="cl-date" data-en="2026-07-27">2026-07-27</span>
+        <ul class="cl-list">
+          <li><b>Steam 数据核实</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Verified game via Steam API (App ID 3265700), confirmed real game data from store page and player reviews">— 通过 Steam API 核实游戏（App ID 3265700），确认商店页和玩家评论中的真实数据</span></li>
+          <li><b>开发者信息修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Updated all footers: poncle → poncle & Nosebleed Interactive (co-developer)">— 全站 footer 更新：poncle → poncle & Nosebleed Interactive（联合开发者）</span></li>
+          <li><b>地牢名修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Library → Inlaid Library (锦钿书库), matching achievement name from Steam">— 图书馆 → 锦钿书库 (Inlaid Library)，与 Steam 成就名一致</span></li>
+          <li><b>新增 Boss：门扉女王</b><span class="cl-tag-new">NEW</span> <span data-en="— Added Door Queen boss (Boss 04), confirmed from player reviews as a notorious encounter">— 新增门扉女王 Boss（Boss 04），从玩家评论确认的恶名 Boss</span></li>
+          <li><b>新增真实卡牌</b><span class="cl-tag-new">NEW</span> <span data-en="— Added Hollow Heart, Crown, Guiding Light — all confirmed from Steam achievements">— 新增空虚之心、王冠、指引之光——均来自 Steam 成就确认</span></li>
+          <li><b>新增真实宝石</b><span class="cl-tag-new">NEW</span> <span data-en="— Added Recall Gem, Copy Gem, Mana Gem — gem effects confirmed from player reviews">— 新增回手宝石、复制宝石、蓝法宝石——宝石效果来自玩家评论确认</span></li>
+          <li><b>免责声明修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Replaced overly harsh 'community-inferred' with 'based on Steam store description and player community'">— 将过于悲观的'社区推断'替换为'基于 Steam 商店页与玩家社区整理'</span></li>
+          <li><b>Meta 描述修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Updated page title/description to use official Chinese game name and developer info">— 更新页面标题/描述使用官方中文名和开发者信息</span></li>
+          <li><b>首页统计更新</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Hero stats updated: 31 codex entries (21 cards + 10 gems)">— 首页统计更新：31 图鉴条目（21 卡牌 + 10 宝石）</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry" style="border-left-color:var(--gold)">
+        <span class="cl-version">v2.1.0</span>
+        <span class="cl-date" data-en="2026-07-27">2026-07-27</span>
+        <ul class="cl-list">
+          <li><b>移除虚假数据核对标签</b><span class="cl-tag-fix">FIX</span> <span data-en="— Removed all 'Verified 2026.07' ver-tags that falsely claimed data was verified through in-game testing">— 移除全站 '数据核对 2026.07' ver-tag，该标签虚假声称数据已通过游戏内核实</span></li>
+          <li><b>修正数据来源声明</b><span class="cl-tag-fix">FIX</span> <span data-en="— Replaced false 'Steam description + in-game testing' claims with honest 'community-inferred' disclaimers across all pages">— 将所有页面虚假的 'Steam 描述 + 游戏内实测' 声明替换为诚实的 '社区推断' 免责声明</span></li>
+          <li><b>移除 [待核实] 标注</b><span class="cl-tag-fix">FIX</span> <span data-en="— Replaced scattered [待核实] tags with unified global disclaimer; redundant once honest disclaimer is in place">— 移除分散的 [待核实] 标注，替换为统一全局免责声明</span></li>
+          <li><b>连击计算器倍率修复</b><span class="cl-tag-fix">FIX</span> <span data-en="— Combo calculator now shows cumulative total multiplier instead of last-step multiplier">— 连击计算器现在显示累计总倍率，而非仅显示末步倍率</span></li>
+          <li><b>首页统计修正</b><span class="cl-tag-fix">FIX</span> <span data-en="— Hero stats: 5→6 guide pages, 30+→25 codex entries (matching actual BUILD_DATA count)">— 首页统计：5→6 攻略页面，30+→25 图鉴条目（与实际数据一致）</span></li>
+          <li><b>SEO 域名修复</b><span class="cl-tag-fix">FIX</span> <span data-en="— robots.txt and sitemap.xml: replaced placeholder domain with actual GitHub Pages URL">— robots.txt 与 sitemap.xml：占位域名替换为实际 GitHub Pages 地址</span></li>
+          <li><b>蓝法曲线横轴标签</b><span class="cl-tag-fix">FIX</span> <span data-en="— Deck planner mana curve now has axis labels (1-5 + Wild)">— 牌组模拟器蓝法曲线新增横轴标签（1-5 + 万能）</span></li>
+          <li><b>SW 缓存版本递增</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Service Worker cache version bumped to v2.1 to force cache refresh">— Service Worker 缓存版本递增至 v2.1，强制刷新缓存</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry" style="border-left-color:var(--gold)">
+        <span class="cl-version">v2.0.0</span>
+        <span class="cl-date" data-en="2026-07-27">2026-07-27</span>
+        <ul class="cl-list">
+          <li><b>PWA 离线支持</b><span class="cl-tag-new">NEW</span> <span data-en="— Manifest.json + Service Worker, full offline access to all guide pages">— 新增 manifest.json + Service Worker，支持全站离线访问</span></li>
+          <li><b>进度追踪系统</b><span class="cl-tag-new">NEW</span> <span data-en="— Click-to-track on cards, gems, weapons, bosses; progress bars with localStorage persistence; export/import">— 卡牌/宝石/武器/Boss 可点击追踪，进度条实时更新，支持导出/导入</span></li>
+          <li><b>连击链计算器</b><span class="cl-tag-new">NEW</span> <span data-en="— Interactive combo chain builder on Combat page: add cards, see damage multiplier, Turboturn toggle">— 战斗页新增交互式连击链构建器：添加卡牌、查看倍率、涡轮回合开关</span></li>
+          <li><b>牌组构筑模拟器</b><span class="cl-tag-new">NEW</span> <span data-en="— Deck Planner on Deck Building page: build decks, view mana curve, type distribution, synergy analysis">— 牌组构筑页新增模拟器：构建牌组、查看蓝法曲线、类型分布、联动分析</span></li>
+          <li><b>Boss 攻略独立页</b><span class="cl-tag-new">NEW</span> <span data-en="— Dedicated Boss page with phase charts, stat tables, strategy guides, and defeat tracking">— 独立 Boss 攻略页：阶段图表、属性表、打法策略、击败追踪</span></li>
+          <li><b>搜索增强</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Keyboard navigation (↑↓ Enter), search history, Ctrl+K shortcut, pinyin support">— 键盘导航（↑↓ Enter）、搜索历史、Ctrl+K 快捷键、拼音搜索</span></li>
+          <li><b>集中筛选器</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Unified data-chip-group filter system across items and enemy codex">— 统一 data-chip-group 筛选系统，覆盖图鉴与敌人图鉴</span></li>
+          <li><b>页面预加载</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Prefetch all pages for instant navigation">— 预加载所有页面，实现秒开导航</span></li>
+          <li><b>SVG 图标系统</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Centralized SVG sprite for consistent icon rendering">— 集中 SVG 图标精灵，统一图标渲染</span></li>
+          <li><b>Footer 修复</b><span class="cl-tag-fix">FIX</span> <span data-en="— Fixed dead links, added changelog and GitHub links">— 修复死链，新增更新日志与 GitHub 链接</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="cl-version">v1.2.0</span>
+        <span class="cl-date" data-en="2026-07-20">2026-07-20</span>
+        <ul class="cl-list">
+          <li><b>暗色模式</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Dark mode toggle with localStorage persistence">— 暗色模式切换，localStorage 持久化</span></li>
+          <li><b>中英双语</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Full i18n with data-en attributes, language toggle">— 完整中英双语，data-en 属性切换</span></li>
+          <li><b>搜索覆盖层</b><span class="cl-tag-new">NEW</span> <span data-en="— Global search overlay with page anchors">— 全局搜索覆盖层，支持页面锚点跳转</span></li>
+          <li><b>响应式设计</b><span class="cl-tag-update">UPDATE</span> <span data-en="— Mobile burger menu, responsive grids">— 移动端汉堡菜单，响应式网格布局</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="cl-version">v1.1.0</span>
+        <span class="cl-date" data-en="2026-07-15">2026-07-15</span>
+        <ul class="cl-list">
+          <li><b>地牢探索页</b><span class="cl-tag-new">NEW</span> <span data-en="— Dungeon types, floor mechanics, shovel system, treasures, walls">— 地牢类型、楼层机制、铁锹系统、宝物、墙壁交互</span></li>
+          <li><b>牌组构筑页</b><span class="cl-tag-new">NEW</span> <span data-en="— Card types, gem augment, weapon evolutions, archetypes">— 卡牌类型、宝石强化、武器进化、流派</span></li>
+          <li><b>图鉴速查页</b><span class="cl-tag-new">NEW</span> <span data-en="— Full card codex with filter chips">— 全卡牌图鉴，筛选标签</span></li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="cl-version">v1.0.0</span>
+        <span class="cl-date" data-en="2026-07-10">2026-07-10</span>
+        <ul class="cl-list">
+          <li><b>站点上线</b><span class="cl-tag-new">NEW</span> <span data-en="— Initial release: homepage, beginner guide, combat system, SEO setup">— 初始版本：首页、新手入门、战斗系统、SEO 配置</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="cross-links">
+      <h4 data-en="Related">相关页面</h4>
+      <div class="cl-list">
+        <a href="index.html" data-en="Home">首页</a>
+        <a href="combat.html" data-en="Combat">卡牌战斗</a>
+        <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
+        <a href="bosses.html" data-en="Bosses">Boss攻略</a>
+        <a href="items.html" data-en="Codex">图鉴速查</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
+        <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle & Nosebleed Interactive.">本站为玩家非营利性攻略站，游戏版权归 poncle & Nosebleed Interactive 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
+      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="bosses.html" data-en="Bosses">Boss攻略</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="changelog.html" data-i18n="foot.changelog">更新日志</a><a href="https://github.com/yxhtl/vampire-crawlers-guide" target="_blank" data-i18n="foot.feedback">投稿反馈</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索攻略、卡牌、机制…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
+</body>
+</html>

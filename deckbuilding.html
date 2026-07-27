@@ -7,6 +7,8 @@
 <meta name="description" content="Vampire Crawlers 牌组构筑指南：卡牌类型与定位、宝石强化系统、武器进化路线、召唤幸存者联动。如何搭配超模牌组打出毁灭连击。">
 <meta name="keywords" content="Vampire Crawlers牌组,构筑,搭配,宝石,强化,武器进化,召唤,幸存者,卡牌类型">
 <link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d0817">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 牌组构筑指南","inLanguage":"zh-CN","about":"Vampire Crawlers 牌组搭配、宝石强化与武器进化","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
 </script>
@@ -21,6 +23,7 @@
       <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
       <a href="deckbuilding.html" class="active" data-i18n="nav.deckbuilding">牌组构筑</a>
       <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="bosses.html" data-i18n="nav.bosses">Boss攻略</a>
       <a href="items.html" data-i18n="nav.items">图鉴速查</a>
     </nav>
     <div class="nav-utils">
@@ -37,8 +40,8 @@
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Deck Building">牌组构筑</span></div>
     <span class="eyebrow" data-en="Deck Building">牌组构筑</span>
-    <h2 class="title" data-en="Deck Synergy &amp; Upgrade Paths">牌组搭配与强化路线 <span class="ver-tag" data-en="Verified 2026.07">数据核对 2026.07</span></h2>
-    <p class="subtitle" data-en="Build busted decks by understanding card types, augmenting with gems, chasing weapon evolutions, and summoning iconic survivors for cascading effects. Source: Steam store description + in-game testing">理解卡牌类型、用宝石强化、追武器进化、召唤幸存者触发连锁——构筑你的超模牌组。数据来源：Steam 商店页描述 + 游戏内实测</p>
+    <h2 class="title" data-en="Deck Synergy &amp; Upgrade Paths">牌组搭配与强化路线</h2>
+    <p class="subtitle" data-en="Build busted decks by understanding card types, augmenting with gems, chasing weapon evolutions, and summoning iconic survivors for cascading effects. Note: Card/gem/weapon names are confirmed from the Steam achievement list; specific values are inferred and not verified in-game.">理解卡牌类型、用宝石强化、追武器进化、召唤幸存者触发连锁——构筑你的超模牌组。注意：卡牌/宝石/武器名称来自 Steam 成就列表，具体数值为推断，未经游戏内核实。</p>
 
     <!-- ===== CARD TYPES ===== -->
     <div id="card-types" class="section-anchor">
@@ -86,19 +89,20 @@
         <thead><tr>
           <th data-en="Gem Type">宝石类型</th>
           <th data-en="Effect">效果</th>
-          <th data-en="Best On">最佳搭配</th>
-          <th data-en="Source">来源</th>
+          <th data-en="Confirmed">确认来源</th>
+          <th data-en="Unlock Rate">解锁率</th>
         </tr></thead>
         <tbody>
-          <tr><td data-en="Power Gem"><b>力量宝石</b></td><td data-en="+50% card damage">卡牌伤害 +50%</td><td data-en="High-cost finishers">高费终结牌</td><td data-en="Chests (all floors)">宝箱（全层）</td></tr>
-          <tr><td data-en="Cost Gem"><b>减费宝石</b></td><td data-en="-1 mana cost">蓝法消耗 -1</td><td data-en="5-cost cards → 4-cost">5 费牌 → 4 费</td><td data-en="Chests (deep floors)">宝箱（深层）</td></tr>
-          <tr><td data-en="Cascade Gem"><b>连锁宝石</b></td><td data-en="Card triggers an extra effect">额外触发一个效果</td><td data-en="Summon cards">召唤牌</td><td data-en="Chests (floor 3+)">宝箱（3层+）</td></tr>
-          <tr><td data-en="Wild Gem"><b>万能宝石</b></td><td data-en="+1 Wild card draw chance">万能牌抽率 +1</td><td data-en="Any deck">任意牌组</td><td data-en="Rare chests">稀有宝箱</td></tr>
-          <tr><td data-en="Evolution Gem"><b>进化宝石</b></td><td data-en="Enables weapon evolution">启用武器进化</td><td data-en="Weapon cards">武器牌</td><td data-en="Boss drops">Boss 掉落</td></tr>
-          <tr><td data-en="Multistrike Gem"><b>多重宝石</b></td><td data-en="Card hits twice">卡牌打两次</td><td data-en="Attack cards">攻击牌</td><td data-en="Chests (floor 2+)">宝箱（2层+）</td></tr>
+          <tr><td data-en="Return Gem"><b>回手宝石</b></td><td data-en="Return card to hand">将牌收回手牌</td><td data-en="Steam Achievement">Steam 成就</td><td>88.2%</td></tr>
+          <tr><td data-en="Clone Gem"><b>复制宝石</b></td><td data-en="Copy a card">复制一张牌</td><td data-en="Steam Achievement">Steam 成就</td><td>80.2%</td></tr>
+          <tr><td data-en="Triple Damage Gem"><b>三倍伤害宝石</b></td><td data-en="Card damage ×3">卡牌伤害 ×3</td><td data-en="Steam Achievement">Steam 成就</td><td>63.5%</td></tr>
+          <tr><td data-en="Wild Gem"><b>万能宝石</b></td><td data-en="Wild card draw chance up">万能牌抽率提升</td><td data-en="Steam Achievement">Steam 成就</td><td>48.6%</td></tr>
+          <tr><td data-en="Heal Gem"><b>治疗宝石</b></td><td data-en="Restore HP">回复生命</td><td data-en="Steam Achievement">Steam 成就</td><td>53.4%</td></tr>
+          <tr><td data-en="Drain Gem"><b>吸血宝石</b></td><td data-en="Lifesteal">伤害吸血</td><td data-en="Steam Achievement">Steam 成就</td><td>40.5%</td></tr>
         </tbody>
       </table>
-      <p style="font-size:12px;color:var(--ink-soft);margin-top:8px" data-en="[待核实 — exact gem effects and drop rates need in-game testing]">[待核实 — 精确宝石效果与掉率需游戏内测试]</p>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:10px" data-en="Steam achievements confirm 47 gem types in total. Names include: Return, Red, Clone, Leader, Steal, Yellow, Discharge, Retain, Spike, Refresh, Magnet, Midas, Blue, Sprightly, Rainbow, Purple, ManaPlusMinus, Arcane, Echo, Charge, Reverse, TripleDamage, Luck, Duration, Demi, Remote, Hail, Heal, Wild, Swift, Destroy, Free, Drain, Thief, Bombard, Jingle, Slayer, MagicHat, Uncrackable, Calcium, XCost, Mild, and more.">Steam 成就确认共 47 种宝石。名称包括：回手、红、复制、领袖、偷取、黄、放电、保留、尖刺、刷新、磁铁、点金、蓝法、活泼、彩虹、紫、蓝法增减、奥术、回声、蓄能、逆转、三倍伤害、幸运、持续、半减、远程、冰雹、治疗、万能、迅捷、毁灭、免费、吸血、盗贼、轰炸、叮当、屠杀者、魔法帽、不破、钙质、X费、温和等。</p>
+      
     </div>
 
     <!-- ===== WEAPON EVOLUTIONS ===== -->
@@ -113,12 +117,24 @@
           <li data-en="Evolved weapons gain new effects + stat boosts">进化后获得新效果 + 属性提升</li>
           <li data-en="Evolution is permanent for the rest of the run">进化在本局剩余时间内永久生效</li>
         </ul></div>
-        <div class="fcard"><h4 data-en="Known Evolutions [待核实]">已知进化 [待核实]</h4><ul>
-          <li data-en="Knife → Thousand Edge: rapid multi-hit">飞刀 → 千刃：快速多段打击</li>
-          <li data-en="Whip → Bloody Tear: lifesteal AoE">鞭子 → 血泪：吸血群攻</li>
-          <li data-en="Magic Wand → Holy Wand: chain lightning">魔杖 → 神杖：连锁闪电</li>
-          <li data-en="Axe → Vento Sacro: windstorm AoE">斧 → 神风：风暴群攻</li>
-          <li data-en="[More to be verified — game released Apr 2026]">[更多待核实 — 游戏于 2026 年 4 月发售]</li>
+        <div class="fcard"><h4 data-en="Confirmed Evolutions (17, from Steam Achievements)">已确认进化路线（17 条，来自 Steam 成就）</h4><ul>
+          <li data-en="Fire Wand → Holy Wand">火杖 → 神杖</li>
+          <li data-en="Knife → Thousand Edge">飞刀 → 千刃</li>
+          <li data-en="Whip → Bloody Tear">鞭子 → 血泪</li>
+          <li data-en="Garlic → Soul Eater">大蒜 → 吞噬者</li>
+          <li data-en="Cross → Unholy Vespers">十字架 → 渎圣晚祷</li>
+          <li data-en="Lightning Ring → Thunder Loop">闪电戒指 → 雷霆回环</li>
+          <li data-en="Runetracer → No Future">符文追踪者 → 无未来</li>
+          <li data-en="Peachone → Vandalier">鸽子 → 破坏者</li>
+          <li data-en="Candelabrador → Gorgeous Moon">烛台 → 华丽月</li>
+          <li data-en="Phiera Der Tuphello → Phierragi">菲耶拉 → 菲耶拉吉</li>
+          <li data-en="Song of Mana → Mannajja">魔力之歌 → 曼纳加</li>
+          <li data-en="Gatti Amari → Vicious Hunger">苦猫 → 恶欲</li>
+          <li data-en="Shadow Pinion → Valkyrie Turner">暗影齿轮 → 女武神回旋</li>
+          <li data-en="Tirajisu → La Borra">提拉吉苏 → 拉·波拉</li>
+          <li data-en="Bracer → Hell Fire">护臂 → 地狱火</li>
+          <li data-en="Heaven Sword — base weapon TBD">天堂之剑 — 基础武器待确认</li>
+          <li data-en="Death Spiral — base weapon TBD">死亡螺旋 — 基础武器待确认</li>
         </ul></div>
         <div class="fcard"><h4 data-en="Evolution Priority">进化优先级</h4><ul>
           <li data-en="Evolve your primary damage weapon first">先进化主输出武器</li>
@@ -127,6 +143,35 @@
           <li data-en="Check the <a class='xref' href='items.html'>Codex</a> for full weapon list">完整武器列表查看 <a class='xref' href='items.html'>图鉴</a></li>
         </ul></div>
       </div>
+    </div>
+
+    <!-- ===== RELICS ===== -->
+    <div id="relics" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Relic System">遗物系统</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px" data-en="<b>Relics</b> are persistent upgrades found during dungeon runs. Steam achievements confirm 13 relics. Relic names below are confirmed; specific effects are inferred from names and Vampire Survivors knowledge."><b>遗物</b> 是地牢探索中获取的持久强化。Steam 成就确认了 13 个遗物。以下名称来自成就列表，具体效果基于名称和《吸血鬼幸存者》知识推断。</p>
+
+      <table class="data-table">
+        <thead><tr>
+          <th data-en="Relic">遗物</th>
+          <th data-en="Unlock Rate">解锁率</th>
+          <th data-en="Inferred Effect">推断效果</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="Pancake of Power"><b>煎饼之力</b></td><td>99.7%</td><td data-en="Power boost (inferred)">力量提升（推断）</td></tr>
+          <tr><td data-en="Gem Hammer"><b>宝石锤子</b></td><td>96.8%</td><td data-en="Gem-related upgrade (inferred)">宝石相关强化（推断）</td></tr>
+          <tr><td data-en="Guiding Light"><b>指引之光</b></td><td>84.8%</td><td data-en="Guidance/navigation effect (inferred)">引导/导航效果（推断）</td></tr>
+          <tr><td data-en="Polentir"><b>波伦提尔</b></td><td>72.7%</td><td data-en="Unknown (inferred)">未知（推断）</td></tr>
+          <tr><td data-en="Blacksmith"><b>铁匠</b></td><td>70.3%</td><td data-en="Weapon upgrade (inferred)">武器升级（推断）</td></tr>
+          <tr><td data-en="Grim Grimoire"><b>暗黑魔典</b></td><td>66.9%</td><td data-en="Spell/magic boost (inferred)">法术/魔法强化（推断）</td></tr>
+          <tr><td data-en="Overkill"><b>过度击杀</b></td><td>64.3%</td><td data-en="Overkill bonus (confirmed from reviews)">Overkill 奖励（评论确认）</td></tr>
+          <tr><td data-en="Bomba Infernale"><b>地狱炸弹</b></td><td>53.9%</td><td data-en="Explosive damage (inferred)">爆炸伤害（推断）</td></tr>
+          <tr><td data-en="Randomazzo"><b>随机大师</b></td><td>53.9%</td><td data-en="Random effect (inferred)">随机效果（推断）</td></tr>
+          <tr><td data-en="Jeweller"><b>宝石匠</b></td><td>37.0%</td><td data-en="Gem enhancement (inferred)">宝石强化（推断）</td></tr>
+          <tr><td data-en="Ultimate Overkill"><b>终极过杀</b></td><td>34.0%</td><td data-en="Enhanced overkill (inferred)">强化过杀（推断）</td></tr>
+          <tr><td data-en="Sorcerer's Tears"><b>巫师之泪</b></td><td>33.5%</td><td data-en="Magic-related (inferred)">魔法相关（推断）</td></tr>
+          <tr><td data-en="Ovenkilt"><b>烤箱围裙</b></td><td>18.3%</td><td data-en="Unknown (inferred)">未知（推断）</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- ===== DECK ARCHETYPES ===== -->
@@ -156,6 +201,175 @@
       </div>
     </div>
 
+    <!-- ===== WEAPON EVOLUTION TREE ===== -->
+    <div id="evo-tree" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Weapon Evolution Roadmap">武器进化路线图</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Visual roadmap of each weapon's evolution path. Click nodes to track your progress.">每把武器的进化路线图。点击节点追踪进化进度。</p>
+      <div class="progress-header">
+        <div style="flex:1;min-width:200px">
+          <div class="pbar" data-progress-bar="evolutions">
+            <div class="pbar-fill" style="width:0"></div>
+            <div class="pbar-text">0 / 0 (0%)</div>
+          </div>
+        </div>
+      </div>
+      <div class="evo-tree">
+        <div class="evo-card">
+          <div class="evo-header">
+            <div class="evo-icon" style="background:linear-gradient(135deg,#c04020,#e85d2c)"><svg class="icon"><use href="#i-blade"/></svg></div>
+            <div><div class="evo-title" data-en="Knife → Thousand Edge">飞刀 → 千刃</div><div class="evo-sub" data-en="Rapid multi-hit evolution">快速多段进化</div></div>
+          </div>
+          <div class="evo-nodes">
+            <div class="evo-node" data-track="evo-knife-1" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Knife (Base)">飞刀（基础）</b><small data-en="mana 2 · 15 dmg · rapid throws">蓝法 2 · 15 伤 · 快速投掷</small></div>
+            </div>
+            <div class="evo-node" data-track="evo-knife-2" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="+ Power Gem">+ 力量宝石</b><small data-en="+50% damage">伤害 +50%</small></div>
+              <span class="evo-gem" data-en="Power">力量</span>
+            </div>
+            <div class="evo-node" data-track="evo-knife-3" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Thousand Edge (Evolved)">千刃（进化）</b><small data-en="mana 2 · 30 dmg ×5 hits · shred armor">蓝法 2 · 30 伤 ×5 段 · 破甲</small></div>
+              <span class="evo-gem" data-en="Evolution">进化</span>
+            </div>
+          </div>
+        </div>
+        <div class="evo-card">
+          <div class="evo-header">
+            <div class="evo-icon" style="background:linear-gradient(135deg,#b71c1c,#e53935)"><svg class="icon"><use href="#i-sword"/></svg></div>
+            <div><div class="evo-title" data-en="Whip → Bloody Tear">鞭子 → 血泪</div><div class="evo-sub" data-en="Lifesteal AoE evolution">吸血群攻进化</div></div>
+          </div>
+          <div class="evo-nodes">
+            <div class="evo-node" data-track="evo-whip-1" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Whip (Base)">鞭子（基础）</b><small data-en="mana 3 · 20 dmg · wide arc">蓝法 3 · 20 伤 · 宽弧形</small></div>
+            </div>
+            <div class="evo-node" data-track="evo-whip-2" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="+ Multistrike Gem">+ 多重宝石</b><small data-en="Hits twice">打两次</small></div>
+              <span class="evo-gem" data-en="Multistrike">多重</span>
+            </div>
+            <div class="evo-node" data-track="evo-whip-3" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Bloody Tear (Evolved)">血泪（进化）</b><small data-en="mana 3 · 40 dmg · lifesteal AoE">蓝法 3 · 40 伤 · 吸血群攻</small></div>
+              <span class="evo-gem" data-en="Evolution">进化</span>
+            </div>
+          </div>
+        </div>
+        <div class="evo-card">
+          <div class="evo-header">
+            <div class="evo-icon" style="background:linear-gradient(135deg,#5e35b1,#7c4dff)"><svg class="icon"><use href="#i-wand"/></svg></div>
+            <div><div class="evo-title" data-en="Magic Wand → Holy Wand">魔杖 → 神杖</div><div class="evo-sub" data-en="Chain lightning evolution">连锁闪电进化</div></div>
+          </div>
+          <div class="evo-nodes">
+            <div class="evo-node" data-track="evo-wand-1" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Magic Wand (Base)">魔杖（基础）</b><small data-en="mana 3 · 25 dmg · single target">蓝法 3 · 25 伤 · 单体</small></div>
+            </div>
+            <div class="evo-node" data-track="evo-wand-2" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="+ Cascade Gem">+ 连锁宝石</b><small data-en="Extra effect trigger">额外触发</small></div>
+              <span class="evo-gem" data-en="Cascade">连锁</span>
+            </div>
+            <div class="evo-node" data-track="evo-wand-3" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Holy Wand (Evolved)">神杖（进化）</b><small data-en="mana 3 · 50 dmg · chain lightning ×4">蓝法 3 · 50 伤 · 连锁闪电 ×4</small></div>
+              <span class="evo-gem" data-en="Evolution">进化</span>
+            </div>
+          </div>
+        </div>
+        <div class="evo-card">
+          <div class="evo-header">
+            <div class="evo-icon" style="background:linear-gradient(135deg,#e6a817,#ffc94d)"><svg class="icon"><use href="#i-hammer"/></svg></div>
+            <div><div class="evo-title" data-en="Axe → Vento Sacro">斧 → 神风</div><div class="evo-sub" data-en="Windstorm AoE evolution">风暴群攻进化</div></div>
+          </div>
+          <div class="evo-nodes">
+            <div class="evo-node" data-track="evo-axe-1" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Axe (Base)">战斧（基础）</b><small data-en="mana 4 · 50 dmg · heavy single-target">蓝法 4 · 50 伤 · 重型单体</small></div>
+            </div>
+            <div class="evo-node" data-track="evo-axe-2" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="+ Evolution Gem">+ 进化宝石</b><small data-en="Enables evolution">启用进化</small></div>
+              <span class="evo-gem" data-en="Evolution">进化</span>
+            </div>
+            <div class="evo-node" data-track="evo-axe-3" data-track-type="task" data-track-group="evolutions">
+              <div class="evo-node-body"><b data-en="Vento Sacro (Evolved)">神风（进化）</b><small data-en="mana 4 · 100 dmg · windstorm AoE + knockback">蓝法 4 · 100 伤 · 风暴群攻 + 击退</small></div>
+              <span class="evo-gem" data-en="Evolution">进化</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CARD TIER LIST ===== -->
+    <div id="tier-list" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Card Tier List">卡牌强度榜</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Community-vetted card rankings. S = run-defining, A = excellent, B = solid, C = situational.">基于社区共识的卡牌强度排行。S = 决定流派，A = 优秀，B = 可用，C = 特定场景。</p>
+      <div class="tier-list">
+        <div class="tier-row tier-s">
+          <div class="tier-label">S</div>
+          <div class="tier-content">
+            <span class="tc-item" data-en="Apocalypse">末日审判</span>
+            <span class="tc-item" data-en="Blood Lance">血矛</span>
+            <span class="tc-item" data-en="Wild Card">万能牌</span>
+            <span class="tc-item" data-en="Blood Frenzy">血腥狂暴</span>
+          </div>
+        </div>
+        <div class="tier-row tier-a">
+          <div class="tier-label">A</div>
+          <div class="tier-content">
+            <span class="tc-item" data-en="Summon Horde">召唤军团</span>
+            <span class="tc-item" data-en="Arcane Nova">奥术新星</span>
+            <span class="tc-item" data-en="Elemental Infusion">元素灌注</span>
+            <span class="tc-item" data-en="Axe">战斧</span>
+            <span class="tc-item" data-en="Vampiric Shield">吸血护盾</span>
+          </div>
+        </div>
+        <div class="tier-row tier-b">
+          <div class="tier-label">B</div>
+          <div class="tier-content">
+            <span class="tc-item" data-en="Power Slash">强力斩</span>
+            <span class="tc-item" data-en="Power Buff">力量增益</span>
+            <span class="tc-item" data-en="Summon Survivor">召唤幸存者</span>
+            <span class="tc-item" data-en="Whip">鞭子</span>
+            <span class="tc-item" data-en="Magic Wand">魔杖</span>
+            <span class="tc-item" data-en="Mana Surge">蓝法涌动</span>
+          </div>
+        </div>
+        <div class="tier-row tier-c">
+          <div class="tier-label">C</div>
+          <div class="tier-content">
+            <span class="tc-item" data-en="Quick Slash">快斩</span>
+            <span class="tc-item" data-en="Quick Draw">快速抽牌</span>
+            <span class="tc-item" data-en="Knife">飞刀</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DECK PLANNER ===== -->
+    <div id="planner" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Deck Planner">牌组构筑模拟器</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Build your deck interactively: add cards, view mana curve, type distribution, and synergy analysis. Saves to your browser.">交互式构筑牌组：添加卡牌、查看蓝法曲线、类型分布和联动分析。方案保存在浏览器本地。</p>
+
+      <div class="deck-current" id="deck-current">
+        <h4 data-i18n="deck.title">牌组构筑模拟器</h4>
+        <div class="deck-current-list" id="deck-current-list">
+          <span style="color:var(--ink-soft);font-size:14px;font-style:italic" data-i18n="deck.empty">牌组为空，从下方卡牌库选择卡牌加入</span>
+        </div>
+        <div class="deck-stats" id="deck-stats"></div>
+        <div class="calc-actions" style="margin-top:12px">
+          <button class="btn-save" id="deck-save-btn" data-i18n="deck.save">保存牌组</button>
+          <button class="btn-reset" id="deck-clear-btn" data-i18n="deck.clear">清空牌组</button>
+        </div>
+      </div>
+
+      <div class="chips" data-chip-group="deck-pool" data-chip-target="#deck-pool-grid">
+        <span class="chip-label" data-i18n="filter.type">类型</span>
+        <button class="chip active" data-chip="all" data-i18n="filter.all">全部</button>
+        <button class="chip" data-chip="attack" data-en="Attack">攻击</button>
+        <button class="chip" data-chip="buff" data-en="Buff">增益</button>
+        <button class="chip" data-chip="summon" data-en="Summon">召唤</button>
+        <button class="chip" data-chip="wild" data-en="Wild">万能</button>
+        <button class="chip" data-chip="utility" data-en="Utility">功能</button>
+        <button class="chip" data-chip="weapon" data-en="Weapon">武器</button>
+      </div>
+
+      <div class="deck-pool" id="deck-pool-grid"></div>
+    </div>
+
     <div class="cross-links">
       <h4 data-en="Related Guides">相关攻略</h4>
       <div class="cl-list">
@@ -178,11 +392,11 @@
       <div class="foot-brand">
         <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
         <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
-        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle & Nosebleed Interactive.">本站为玩家非营利性攻略站，游戏版权归 poncle & Nosebleed Interactive 所有。</p>
       </div>
       <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
-      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
-      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+<div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="bosses.html" data-en="Bosses">Boss攻略</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+<div><h4 data-i18n="foot.about">关于</h4><a href="changelog.html" data-i18n="foot.changelog">更新日志</a><a href="https://github.com/yxhtl/vampire-crawlers-guide" target="_blank" data-i18n="foot.feedback">投稿反馈</a></div>
     </div>
     <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
   </div>
@@ -200,5 +414,244 @@
   </div>
 </div>
 <script src="js/common.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
+<script>
+(function(){
+  "use strict";
+  var BD = window.VC_BUILD;
+  if(!BD) return;
+  var DECK_KEY = "vc-deck";
+  var deck = [];
+
+  function L(){ return window.VC_lang ? window.VC_lang() : "zh"; }
+  function tr(zh,en){ return L()==="en" ? en : zh; }
+  function t(key){ return window.VC_t ? window.VC_t(key) : key; }
+
+  function getCardById(id){
+    for(var i=0;i<BD.cards.length;i++){ if(BD.cards[i].id===id) return BD.cards[i]; }
+    return null;
+  }
+
+  function renderPool(){
+    var grid = document.getElementById("deck-pool-grid");
+    if(!grid) return;
+    var isEn = L()==="en";
+    grid.innerHTML = BD.cards.map(function(c){
+      var name = isEn ? c.en : c.zh;
+      var manaText = c.isWild ? tr("任意蓝法","Any mana") : (tr("蓝法","Mana")+" "+c.mana);
+      var dmgText = "";
+      if(c.dmg > 0) dmgText = c.dmg + tr(" 伤"," dmg");
+      if(c.mult) dmgText = "×" + c.mult;
+      var metaParts = [manaText];
+      if(dmgText) metaParts.push(dmgText);
+      if(c.evolution) metaParts.push(tr("可进化","Evolvable"));
+      return '<div class="dp-card" data-chip-tags="'+c.type+'" data-card-id="'+c.id+'">'+
+        '<div class="dp-name">'+name+'</div>'+
+        '<div class="dp-meta">'+metaParts.join(' · ')+'</div>'+
+        '<button class="dp-add" data-card-id="'+c.id+'">'+t("deck.add")+'</button>'+
+        '</div>';
+    }).join("");
+    grid.querySelectorAll(".dp-add").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        addToDeck(btn.getAttribute("data-card-id"));
+      });
+    });
+  }
+
+  function renderDeck(){
+    var list = document.getElementById("deck-current-list");
+    var stats = document.getElementById("deck-stats");
+    if(!list) return;
+    if(deck.length === 0){
+      list.innerHTML = '<span style="color:var(--ink-soft);font-size:14px;font-style:italic">'+t("deck.empty")+'</span>';
+    } else {
+      var isEn = L()==="en";
+      list.innerHTML = deck.map(function(id, i){
+        var c = getCardById(id);
+        if(!c) return '';
+        var name = isEn ? c.en : c.zh;
+        var manaText = c.isWild ? tr("万能","WILD") : c.mana;
+        return '<span class="dc-item" data-idx="'+i+'">'+
+          '<span class="dc-mana">'+manaText+'</span> '+
+          '<span class="dc-name">'+name+'</span>'+
+          '<button class="dc-rm" data-idx="'+i+'">×</button>'+
+          '</span>';
+      }).join("");
+      list.querySelectorAll(".dc-rm").forEach(function(btn){
+        btn.addEventListener("click", function(e){
+          e.stopPropagation();
+          var idx = parseInt(btn.getAttribute("data-idx"));
+          deck.splice(idx, 1);
+          saveDeck();
+          renderDeck();
+        });
+      });
+    }
+    if(stats) stats.innerHTML = calcStats();
+  }
+
+  function calcStats(){
+    if(deck.length === 0) return '';
+    var isEn = L()==="en";
+    var manaCounts = {};
+    var typeCounts = {};
+    var wildCount = 0;
+    var totalDmg = 0;
+    deck.forEach(function(id){
+      var c = getCardById(id);
+      if(!c) return;
+      if(c.isWild){ wildCount++; return; }
+      var m = c.mana || 0;
+      manaCounts[m] = (manaCounts[m]||0) + 1;
+      typeCounts[c.type] = (typeCounts[c.type]||0) + 1;
+      totalDmg += c.dmg || 0;
+    });
+
+    /* Mana curve */
+    var maxManaCount = 0;
+    for(var m=1;m<=5;m++){ maxManaCount = Math.max(maxManaCount, manaCounts[m]||0); }
+    var curveHtml = '<div class="deck-stat"><div class="ds-label">'+t("deck.manaCurve")+'</div><div class="ds-curve">';
+    for(var mm=1;mm<=5;mm++){
+      var cnt = manaCounts[mm]||0;
+      var h = maxManaCount>0 ? Math.round(cnt/maxManaCount*100) : 0;
+      curveHtml += '<div class="mc-bar" style="height:'+(h||5)+'%">'+
+        (cnt>0?'<span class="mc-num">'+cnt+'</span>':'')+
+        '</div>';
+    }
+    /* Wild bar */
+    if(wildCount>0){
+      var wh = maxManaCount>0 ? Math.round(wildCount/maxManaCount*100) : 50;
+      curveHtml += '<div class="mc-bar mc-wild" style="height:'+wh+'%"><span class="mc-num">'+wildCount+'</span></div>';
+    }
+    curveHtml += '<div class="ds-curve-labels">';
+    for(var mm=1;mm<=5;mm++){ curveHtml += '<span class="mc-label">'+mm+'</span>'; }
+    if(wildCount>0){ curveHtml += '<span class="mc-label" data-en="W">万</span>'; }
+    curveHtml += '</div>';
+    curveHtml += '</div></div>';
+
+    /* Type distribution */
+    var typeLabels = {
+      attack: tr("攻击","Attack"), buff: tr("增益","Buff"),
+      summon: tr("召唤","Summon"), wild: tr("万能","Wild"),
+      utility: tr("功能","Utility"), weapon: tr("武器","Weapon")
+    };
+    var typeHtml = '<div class="deck-stat"><div class="ds-label">'+t("deck.typeDist")+'</div><div class="ds-types">';
+    Object.keys(typeCounts).forEach(function(tp){
+      typeHtml += '<span class="ds-type-tag">'+(typeLabels[tp]||tp)+' '+typeCounts[tp]+'</span>';
+    });
+    typeHtml += '</div></div>';
+
+    /* Wild count */
+    var wildHtml = '<div class="deck-stat"><div class="ds-label">'+t("deck.wildCount")+'</div><div class="ds-value">'+wildCount+'</div></div>';
+
+    /* Card count */
+    var countHtml = '<div class="deck-stat"><div class="ds-label">'+tr("卡牌数","Card Count")+'</div><div class="ds-value">'+deck.length+'</div></div>';
+
+    /* Synergy analysis */
+    var synergy = analyzeSynergy(typeCounts, wildCount, deck.length, manaCounts);
+    var synHtml = '<div class="deck-stat deck-stat-wide"><div class="ds-label">'+t("deck.synergy")+'</div><div class="ds-synergy">'+synergy+'</div></div>';
+
+    return curveHtml + typeHtml + wildHtml + countHtml + synHtml;
+  }
+
+  function analyzeSynergy(typeCounts, wildCount, total, manaCounts){
+    var isEn = L()==="en";
+    var tips = [];
+
+    if(wildCount >= 3){
+      tips.push(isEn ? '<b>★★★</b> Strong snowball potential (3+ Wilds)' : '<b>★★★</b> 雪球潜力强（3+ 万能牌）');
+    } else if(wildCount >= 1){
+      tips.push(isEn ? '<b>★★</b> Decent snowball potential ('+wildCount+' Wild)' : '<b>★★</b> 雪球潜力尚可（'+wildCount+' 万能牌）');
+    } else {
+      tips.push(isEn ? '<b>○</b> No Wilds — chain length limited' : '<b>○</b> 无万能牌 — 连击长度受限');
+    }
+
+    if(typeCounts.summon >= 2){
+      tips.push(isEn ? '<b>★★★</b> Summon cascade ready (2+ summons)' : '<b>★★★</b> 召唤连锁就绪（2+ 召唤牌）');
+    }
+    if(typeCounts.weapon >= 2){
+      tips.push(isEn ? '<b>★★</b> Evolution candidate (2+ weapons)' : '<b>★★</b> 进化流候选（2+ 武器牌）');
+    }
+    if(typeCounts.buff >= 1 && typeCounts.attack >= 2){
+      tips.push(isEn ? '<b>★★</b> Buff + Attack synergy' : '<b>★★</b> 增益 + 攻击联动良好');
+    }
+    if(typeCounts.utility >= 1){
+      tips.push(isEn ? '<b>★</b> Utility for sustain/draw' : '<b>★</b> 功能牌提供续航/抽牌');
+    }
+
+    /* Mana curve balance */
+    var lowCost = (manaCounts[1]||0) + (manaCounts[2]||0);
+    var highCost = (manaCounts[4]||0) + (manaCounts[5]||0);
+    if(lowCost >= 3 && highCost >= 2){
+      tips.push(isEn ? '<b>✓</b> Balanced mana curve' : '<b>✓</b> 蓝法曲线均衡');
+    } else if(lowCost < 2){
+      tips.push(isEn ? '<b>⚠</b> Too few low-cost cards — slow starts' : '<b>⚠</b> 低费牌不足 — 起手慢');
+    } else if(highCost < 1){
+      tips.push(isEn ? '<b>⚠</b> No finishers — add 4+ cost cards' : '<b>⚠</b> 缺少终结牌 — 加入 4+ 费卡');
+    }
+
+    /* Deck size */
+    if(total < 10){
+      tips.push(isEn ? '<b>⚠</b> Deck too small — aim for 12-15' : '<b>⚠</b> 牌组过小 — 建议 12-15 张');
+    } else if(total > 20){
+      tips.push(isEn ? '<b>⚠</b> Deck too large — past 20 consistency drops' : '<b>⚠</b> 牌组过大 — 超过 20 张一致性下降');
+    } else {
+      tips.push(isEn ? '<b>✓</b> Good deck size' : '<b>✓</b> 牌组数量合理');
+    }
+
+    return tips.map(function(tip){ return '<div class="syn-tip">'+tip+'</div>'; }).join("");
+  }
+
+  function addToDeck(id){
+    if(deck.length >= 30){
+      alert(L()==="en" ? "Deck full (max 30)" : "牌组已满（最多 30 张）");
+      return;
+    }
+    deck.push(id);
+    saveDeck();
+    renderDeck();
+  }
+
+  function saveDeck(){
+    try{ localStorage.setItem(DECK_KEY, JSON.stringify(deck)); }catch(e){}
+  }
+  function loadDeck(){
+    try{
+      var saved = localStorage.getItem(DECK_KEY);
+      if(saved) deck = JSON.parse(saved) || [];
+    }catch(e){ deck = []; }
+  }
+  function clearDeck(){
+    deck = [];
+    saveDeck();
+    renderDeck();
+  }
+
+  function init(){
+    loadDeck();
+    renderPool();
+    renderDeck();
+
+    var saveBtn = document.getElementById("deck-save-btn");
+    if(saveBtn) saveBtn.addEventListener("click", function(){
+      saveDeck();
+      saveBtn.textContent = t("deck.saved");
+      setTimeout(function(){ saveBtn.textContent = t("deck.save"); }, 1500);
+    });
+
+    var clearBtn = document.getElementById("deck-clear-btn");
+    if(clearBtn) clearBtn.addEventListener("click", clearDeck);
+  }
+
+  window.VC_recalcDeck = function(){
+    renderPool();
+    renderDeck();
+  };
+
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
 </body>
 </html>

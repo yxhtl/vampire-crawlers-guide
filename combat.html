@@ -7,6 +7,8 @@
 <meta name="description" content="Vampire Crawlers 卡牌战斗深度解析：连击链（Combo Chain）倍率机制、万能牌（Wilds）延长策略、涡轮回合（Turboturn）雪球玩法。核心机制全拆解。">
 <meta name="keywords" content="Vampire Crawlers战斗,连击,combo chain,万能牌,wilds,涡轮回合,turboturn,蓝法,mana,倍率">
 <link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d0817">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers 卡牌战斗与连击系统","inLanguage":"zh-CN","about":"Vampire Crawlers 连击链、万能牌与涡轮回合机制详解","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
 </script>
@@ -21,6 +23,7 @@
       <a href="combat.html" class="active" data-i18n="nav.combat">卡牌战斗</a>
       <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
       <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="bosses.html" data-i18n="nav.bosses">Boss攻略</a>
       <a href="items.html" data-i18n="nav.items">图鉴速查</a>
     </nav>
     <div class="nav-utils">
@@ -37,8 +40,8 @@
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Combat">卡牌战斗</span></div>
     <span class="eyebrow" data-en="Combat System">卡牌战斗</span>
-    <h2 class="title" data-en="Combo System &amp; Turboturn Guide">连击系统与 Turboturn 详解 <span class="ver-tag" data-en="Verified 2026.07">数据核对 2026.07</span></h2>
-    <p class="subtitle" data-en="The combo chain is the heart of Vampire Crawlers. Master the ascending mana order, exploit Wilds, and snowball with the Turboturn. Source: Steam store description + in-game testing">连击链是 Vampire Crawlers 的核心。掌握蓝法升序、活用万能牌、用涡轮回合滚雪球。数据来源：Steam 商店页描述 + 游戏内实测</p>
+    <h2 class="title" data-en="Combo System &amp; Turboturn Guide">连击系统与 Turboturn 详解</h2>
+    <p class="subtitle" data-en="The combo chain is the heart of Vampire Crawlers. Master the ascending mana order, exploit Wilds, and snowball with the Turboturn. Note: Combo mechanics are confirmed from the Steam store description; specific multiplier values are inferred and not verified in-game.">连击链是 Vampire Crawlers 的核心。掌握蓝法升序、活用万能牌、用涡轮回合滚雪球。注意：连击机制经 Steam 商店页描述确认，具体倍率数值为推断，未经游戏内核实。</p>
 
     <!-- ===== COMBO CHAIN ===== -->
     <div id="combo" class="section-anchor">
@@ -175,7 +178,7 @@
     <!-- ===== DAMAGE SCALING TABLE ===== -->
     <div style="margin-top:50px">
       <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Damage Scaling Reference">伤害倍率参考表</h4>
-      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Approximate multiplier per chain length. Actual values depend on card types and gems. [待核实 — exact multipliers need in-game testing]">每种连击链长度的近似倍率。实际数值取决于卡牌类型和宝石。[待核实 — 精确倍率需游戏内测试]</p>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Approximate multiplier per chain length. Actual values depend on card types and gems.">每种连击链长度的近似倍率。实际数值取决于卡牌类型和宝石。</p>
       <table class="data-table">
         <thead><tr>
           <th data-en="Chain Length">链长度</th>
@@ -192,6 +195,43 @@
           <tr><td data-en="20+ cards (with Wilds)">20+ 张（含万能牌）</td><td>×30+</td><td data-en="Screen wipe">清屏</td><td data-en="Maximum snowball, meme-tier">极限雪球，整活级</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- ===== COMBO CALCULATOR ===== -->
+    <div id="calculator" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Combo Chain Calculator">连击链计算器</h4>
+      <p style="margin-bottom:16px;color:var(--ink-soft);font-size:14px" data-en="Build your combo chain interactively: add cards, see real-time damage calculation with multipliers, toggle Turboturn for cascade bonuses.">交互式构建连击链：添加卡牌、实时查看伤害计算与倍率、开关涡轮回合查看连锁奖励。</p>
+
+      <div class="calc-box">
+        <div class="calc-row">
+          <label data-i18n="calc.selectCard">选择卡牌</label>
+          <select id="combo-card-select"></select>
+          <button class="btn btn-primary" id="combo-add-btn" style="padding:10px 20px;font-size:14px" data-i18n="calc.addCard">添加卡牌</button>
+        </div>
+        <div class="calc-row">
+          <label data-i18n="calc.turboturn">涡轮回合</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="combo-turboturn">
+            <span class="ts-slider"></span>
+          </label>
+        </div>
+
+        <div class="combo-chain-display" id="combo-chain-display">
+          <span class="cs-placeholder" data-en="Add cards to build your combo chain…">添加卡牌来构建连击链…</span>
+        </div>
+
+        <div class="calc-result" id="combo-result">
+          <div class="rline"><span data-i18n="calc.chainLength">链长度</span><b>0</b></div>
+          <div class="rline"><span data-i18n="calc.totalDamage">总伤害</span><b class="big">0</b></div>
+          <div class="rline"><span data-i18n="calc.multiplier">倍率</span><b>×1.0</b></div>
+          <div class="rline" id="combo-cascade-row" style="display:none"><span data-i18n="calc.cascade">连锁奖励</span><b class="pos">+0%</b></div>
+          <div class="rline" id="combo-status-row"><span data-en="Status">状态</span><b data-i18n="calc.ok">连击有效</b></div>
+        </div>
+
+        <div class="calc-actions">
+          <button class="btn-reset" id="combo-clear-btn" data-i18n="calc.clearChain">清空连击</button>
+        </div>
+      </div>
     </div>
 
     <div class="cross-links">
@@ -216,11 +256,11 @@
       <div class="foot-brand">
         <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
         <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
-        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle & Nosebleed Interactive.">本站为玩家非营利性攻略站，游戏版权归 poncle & Nosebleed Interactive 所有。</p>
       </div>
       <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
-      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
-      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+<div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="bosses.html" data-en="Bosses">Boss攻略</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+<div><h4 data-i18n="foot.about">关于</h4><a href="changelog.html" data-i18n="foot.changelog">更新日志</a><a href="https://github.com/yxhtl/vampire-crawlers-guide" target="_blank" data-i18n="foot.feedback">投稿反馈</a></div>
     </div>
     <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
   </div>
@@ -238,5 +278,153 @@
   </div>
 </div>
 <script src="js/common.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
+<script>
+(function(){
+  "use strict";
+  var BD = window.VC_BUILD;
+  if(!BD) return;
+  var chain = [];
+  var turboturn = false;
+
+  function L(){ return window.VC_lang ? window.VC_lang() : "zh"; }
+  function tr(zh,en){ return L()==="en" ? en : zh; }
+  function t(key){ return window.VC_t ? window.VC_t(key) : key; }
+
+  function fillSelect(){
+    var sel = document.getElementById("combo-card-select");
+    if(!sel) return;
+    sel.innerHTML = BD.cards.map(function(c,i){
+      return '<option value="'+i+'">'+(L()==="en"?c.en:c.zh)+' (mana '+c.mana+')</option>';
+    }).join("");
+  }
+
+  function getMultiplier(stepIdx, totalSteps){
+    if(stepIdx === 0) return 1.0;
+    if(stepIdx === 1) return 1.5;
+    if(stepIdx === 2) return 2.0;
+    if(stepIdx === 3) return 3.0;
+    if(stepIdx === 4) return 5.0;
+    return 5.0 + (stepIdx - 4) * 2.0;
+  }
+
+  function isChainValid(){
+    var prevMana = -1;
+    for(var i = 0; i < chain.length; i++){
+      var card = chain[i];
+      if(card.isWild) continue;
+      if(card.mana <= prevMana) return false;
+      prevMana = card.mana;
+    }
+    return true;
+  }
+
+  function renderChain(){
+    var display = document.getElementById("combo-chain-display");
+    if(!display) return;
+    if(chain.length === 0){
+      display.innerHTML = '<span class="cs-placeholder">'+tr("添加卡牌来构建连击链…","Add cards to build your combo chain…")+'</span>';
+      return;
+    }
+    var valid = isChainValid();
+    var html = "";
+    chain.forEach(function(card, i){
+      var mult = getMultiplier(i, chain.length);
+      var manaText = card.isWild ? tr("万能","WILD") : (tr("蓝法","Mana") + " " + card.mana);
+      var effectText = card.dmg > 0 ? (card.dmg + tr(" 伤"," dmg")) : tr("增益/功能","Buff/Utility");
+      if(card.mult) effectText = "×" + card.mult;
+      html += '<div class="combo-step calc-step'+(card.isWild?' wild':'')+(valid?'':' broken')+'">';
+      html += '<button class="cs-remove" data-idx="'+i+'">×</button>';
+      html += '<div class="cs-mana">'+manaText+'</div>';
+      html += '<div class="cs-name">'+(L()==="en"?card.en:card.zh)+'</div>';
+      html += '<div class="cs-effect">'+effectText+'</div>';
+      if(i > 0) html += '<div class="cs-mult">×'+mult.toFixed(1)+'</div>';
+      html += '</div>';
+      if(i < chain.length - 1) html += '<span class="combo-arrow">›</span>';
+    });
+    display.innerHTML = html;
+    display.querySelectorAll(".cs-remove").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        var idx = parseInt(btn.getAttribute("data-idx"));
+        chain.splice(idx, 1);
+        renderChain();
+        calcResult();
+      });
+    });
+  }
+
+  function calcResult(){
+    var res = document.getElementById("combo-result");
+    if(!res) return;
+    var valid = isChainValid();
+    var totalDmg = 0;
+    var totalMult = 1.0;
+    chain.forEach(function(card, i){
+      var mult = getMultiplier(i, chain.length);
+      var dmg = card.dmg || 0;
+      if(card.mult) dmg = dmg * card.mult;
+      totalDmg += dmg * mult;
+      totalMult *= mult > 1 ? mult : 1;
+    });
+    var cascadeBonus = 0;
+    if(turboturn && chain.length >= 3){
+      cascadeBonus = Math.round((chain.length - 2) * 15);
+      totalDmg = Math.round(totalDmg * (1 + cascadeBonus / 100));
+    }
+    var html = '<div class="rline"><span>'+t("calc.chainLength")+'</span><b>'+chain.length+'</b></div>';
+    html += '<div class="rline"><span>'+t("calc.totalDamage")+'</span><b class="big">'+Math.round(totalDmg)+'</b></div>';
+    html += '<div class="rline"><span>'+t("calc.multiplier")+'</span><b>×'+(chain.length > 0 ? totalMult.toFixed(1) : "1.0")+'</b></div>';
+    if(turboturn && cascadeBonus > 0){
+      html += '<div class="rline"><span>'+t("calc.cascade")+'</span><b class="pos">+'+cascadeBonus+'%</b></div>';
+    }
+    if(chain.length > 0){
+      html += '<div class="rline"><span>'+tr("状态","Status")+'</span><b class="'+(valid?'pos':'neg')+'">'+(valid ? t("calc.ok") : t("calc.broken"))+'</b></div>';
+    }
+    res.innerHTML = html;
+  }
+
+  function addCard(){
+    var sel = document.getElementById("combo-card-select");
+    if(!sel) return;
+    var idx = parseInt(sel.value) || 0;
+    var card = BD.cards[idx];
+    if(!card) return;
+    chain.push(Object.assign({}, card));
+    renderChain();
+    calcResult();
+  }
+
+  function clearChain(){
+    chain = [];
+    renderChain();
+    calcResult();
+  }
+
+  function init(){
+    fillSelect();
+    var addBtn = document.getElementById("combo-add-btn");
+    if(addBtn) addBtn.addEventListener("click", addCard);
+    var clearBtn = document.getElementById("combo-clear-btn");
+    if(clearBtn) clearBtn.addEventListener("click", clearChain);
+    var tt = document.getElementById("combo-turboturn");
+    if(tt) tt.addEventListener("change", function(){
+      turboturn = tt.checked;
+      calcResult();
+    });
+    renderChain();
+    calcResult();
+  }
+
+  window.VC_recalcCombo = function(){
+    fillSelect();
+    renderChain();
+    calcResult();
+  };
+
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
 </body>
 </html>

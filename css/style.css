@@ -41,6 +41,7 @@ body{
 }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
+svg.icon{width:24px;height:24px;display:block;stroke-width:2}
 
 /* ===== DARK MODE ===== */
 body.dark{
@@ -273,6 +274,8 @@ td b{color:var(--heading)}
 .combo-arrow{color:var(--amethyst-2);font-size:22px;font-weight:800}
 .combo-step.wild{border-color:var(--amethyst-2);background:linear-gradient(135deg,var(--card),#f5f0ff)}
 .combo-step.wild .cs-mana{color:var(--amethyst-2)}
+body.dark .combo-step.wild{background:linear-gradient(135deg,var(--card),#241a38)}
+body.dark .combo-step.wild .cs-mana{color:var(--amethyst-2)}
 
 /* ===== DUNGEON FLOOR CARDS ===== */
 .dungeon-floors{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:10px}
@@ -407,4 +410,286 @@ body.dark .cross-links .cl-list a{background:var(--bone)}
   .wrap{padding:0 16px}
   h2.title{font-size:24px}
   .fcard,.qcard{padding:18px}
+}
+
+/* ===== PROGRESS TRACKING ===== */
+.pbar{background:var(--bone);border:1px solid var(--line);border-radius:12px;height:28px;position:relative;overflow:hidden;margin-bottom:6px}
+.pbar-fill{height:100%;background:linear-gradient(90deg,var(--moss),var(--moss-2));border-radius:11px;transition:width .4s ease;min-width:0}
+.pbar-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--heading);z-index:1;text-shadow:0 1px 2px rgba(255,255,255,.5)}
+body.dark .pbar-text{text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.progress-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.progress-actions{display:flex;gap:8px;flex-wrap:wrap}
+.progress-actions button{
+  font-size:12px;font-weight:600;padding:7px 14px;border-radius:8px;cursor:pointer;
+  border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);transition:.15s;
+}
+.progress-actions button:hover{border-color:var(--moss-2);color:var(--moss)}
+body.dark .progress-actions button{background:var(--card)}
+
+/* track-toggle button */
+.track-label{
+  display:inline-block;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;
+  margin-top:6px;background:var(--bone);color:var(--ink-soft);transition:.15s;
+}
+[data-track].collected .track-label,[data-track].defeated .track-label,[data-track].rebuilt .track-label{
+  background:#eef5ef;color:var(--moss);
+}
+body.dark .track-label{background:var(--bone)}
+body.dark [data-track].collected .track-label,body.dark [data-track].defeated .track-label,
+body.dark [data-track].rebuilt .track-label{background:#1e2a20;color:var(--moss-2)}
+
+/* progress overview panel (homepage) */
+.progress-overview{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  box-shadow:var(--shadow-lg);margin-bottom:0;
+}
+.progress-overview h3{color:var(--heading);font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.progress-overview .po-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.progress-overview .po-item{text-align:center}
+.progress-overview .po-item .po-icon{font-size:28px;margin-bottom:6px}
+.progress-overview .po-item .po-label{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+.progress-overview .po-empty{text-align:center;color:var(--ink-soft);font-size:14px;padding:20px}
+
+/* track toggle button (real button on tracked items) */
+[data-track]{position:relative;transition:.2s;cursor:pointer}
+[data-track] .track-toggle{
+  position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;
+  border:2.5px solid var(--line);background:var(--card);cursor:pointer;
+  display:grid;place-items:center;transition:.2s;z-index:3;padding:0;
+  color:transparent;
+}
+.track-toggle svg{opacity:0;transition:.2s}
+[data-track]:hover .track-toggle{border-color:var(--moss-2)}
+[data-track].collected .track-toggle,[data-track].defeated .track-toggle,[data-track].rebuilt .track-toggle{
+  background:linear-gradient(135deg,var(--moss),var(--moss-2));
+  border-color:transparent;color:#fff;
+}
+[data-track].collected .track-toggle svg,[data-track].defeated .track-toggle svg,[data-track].rebuilt .track-toggle svg{opacity:1}
+[data-track].collected,[data-track].defeated,[data-track].rebuilt{
+  opacity:.72;border-color:var(--moss-2)!important;
+}
+[data-track]{padding-right:42px}
+
+/* ===== SEARCH ENHANCEMENTS ===== */
+.search-hit{animation:searchHit 2.8s ease;border-radius:12px;scroll-margin-top:80px}
+@keyframes searchHit{
+  0%{box-shadow:0 0 0 0 rgba(230,168,23,.8)}
+  15%{box-shadow:0 0 0 6px rgba(230,168,23,.5)}
+  100%{box-shadow:0 0 0 0 rgba(230,168,23,0)}
+}
+.search-results .sr-item.selected{background:var(--bone);border-left:3px solid var(--gold)}
+.search-results .sr-item.sr-history{padding:10px 20px}
+.search-results .sr-label{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px 6px;display:flex;justify-content:space-between;align-items:center}
+.search-results .sr-clear{background:none;border:0;cursor:pointer;font-size:12px;color:var(--ink-soft);font-weight:600}
+.search-results .sr-clear:hover{color:var(--blood-2)}
+
+/* ===== COMBO CALCULATOR ===== */
+.calc-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-top:18px}
+.calc-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.calc-row label{font-size:14px;font-weight:700;color:var(--heading);min-width:80px}
+.calc-row select{flex:1;min-width:180px;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit;outline:0;transition:.15s;background:var(--card);color:var(--ink)}
+.calc-row select:focus{border-color:var(--gold-2)}
+.calc-result{background:#f5f8f5;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:10px}
+body.dark .calc-result{background:var(--bone)}
+.calc-result .rline{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:14px}
+.calc-result .rline b{color:var(--heading);font-size:16px}
+.calc-result .rline .big{font-size:22px;font-weight:900;color:var(--gold)}
+.calc-result .rline .pos{color:var(--moss)}
+.calc-result .rline .neg{color:var(--blood-2)}
+body.dark .calc-result .rline .pos{color:var(--moss-2)}
+.calc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.calc-actions button{font-size:13px;font-weight:600;padding:9px 18px;border-radius:10px;cursor:pointer;border:0;transition:.15s}
+.calc-actions .btn-save{background:var(--amethyst);color:#fff}
+.calc-actions .btn-save:hover{background:var(--amethyst-2)}
+.calc-actions .btn-reset{background:var(--bone);color:var(--ink-soft);border:1.5px solid var(--line)}
+.calc-actions .btn-reset:hover{border-color:var(--blood-2);color:var(--blood-2)}
+
+/* combo chain visual in calculator */
+.combo-chain-display{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:14px 0;min-height:60px}
+.combo-chain-display .cs-placeholder{color:var(--ink-soft);font-size:14px;font-style:italic}
+.combo-step.calc-step{cursor:pointer;position:relative}
+.combo-step.calc-step .cs-remove{
+  position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;
+  background:var(--blood);color:#fff;font-size:12px;font-weight:700;border:0;cursor:pointer;
+  display:none;align-items:center;justify-content:center;line-height:1;
+}
+.combo-step.calc-step:hover .cs-remove{display:flex}
+.combo-step.broken{border-color:var(--blood-2)!important;background:#fff0f0}
+body.dark .combo-step.broken{background:#2a1018}
+
+/* toggle switch for turboturn */
+.toggle-switch{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+}
+.toggle-switch input{display:none}
+.toggle-switch .ts-slider{
+  width:42px;height:24px;border-radius:12px;background:var(--line);position:relative;transition:.2s;
+}
+.toggle-switch .ts-slider::after{
+  content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;
+  background:#fff;transition:.2s;
+}
+.toggle-switch input:checked + .ts-slider{background:var(--gold)}
+.toggle-switch input:checked + .ts-slider::after{transform:translateX(18px)}
+
+/* ===== DECK PLANNER ===== */
+.deck-pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:18px}
+.deck-pool .dp-card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;
+  box-shadow:var(--shadow);transition:.15s;cursor:pointer;
+}
+.deck-pool .dp-card:hover{border-color:var(--gold-2);transform:translateY(-2px)}
+.deck-pool .dp-card .dp-name{font-size:14px;font-weight:700;color:var(--heading)}
+.deck-pool .dp-card .dp-meta{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.deck-current{background:var(--bone);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+body.dark .deck-current{background:var(--bone)}
+.deck-current h4{font-size:15px;color:var(--heading);margin-bottom:10px}
+.deck-current-list{display:flex;gap:8px;flex-wrap:wrap}
+.deck-current-list .dc-item{
+  background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;
+  font-size:13px;color:var(--ink);display:flex;align-items:center;gap:6px;cursor:pointer;transition:.15s;
+}
+.deck-current-list .dc-item:hover{border-color:var(--blood-2)}
+.deck-current-list .dc-item .dc-rm{color:var(--blood-2);font-weight:700;font-size:14px}
+.deck-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+.deck-stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
+.deck-stat .ds-label{font-size:12px;color:var(--ink-soft);font-weight:600}
+.deck-stat .ds-value{font-size:22px;font-weight:900;color:var(--heading);margin-top:4px}
+.mana-curve{display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:10px}
+.mana-curve .mc-bar{
+  flex:1;background:linear-gradient(180deg,var(--amethyst-2),var(--amethyst));border-radius:6px 6px 0 0;
+  min-height:4px;position:relative;transition:.2s;
+}
+.mana-curve .mc-bar.mc-wild{background:linear-gradient(180deg,var(--gold-2),var(--gold))}
+.mana-curve .mc-bar .mc-num{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--ink)}
+.mana-curve .mc-label{font-size:10px;text-align:center;color:var(--ink-soft);margin-top:4px}
+.ds-curve-labels{display:flex;gap:6px;margin-top:2px}
+.ds-curve-labels .mc-label{flex:1;text-align:center;font-size:10px;font-weight:700;color:var(--ink-soft)}
+
+/* ===== BOSS CARDS ===== */
+.boss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:10px}
+.boss-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.2s;border-top:4px solid var(--blood-2)}
+.boss-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.boss-card .boss-num{font-size:12px;font-weight:700;color:var(--blood-2);letter-spacing:.1em}
+.boss-card h4{color:var(--heading);font-size:18px;margin:4px 0 10px}
+.boss-card .boss-area{font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.boss-card .boss-strat{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.boss-card .boss-power{margin-top:10px;font-size:12px;font-weight:700;color:var(--gold);background:#f5edda;padding:6px 12px;border-radius:8px;display:inline-block}
+body.dark .boss-card .boss-power{background:#2a2230}
+
+/* boss phase chart */
+.boss-phase-chart{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;margin:14px 0 20px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+}
+.boss-phase{padding:16px 14px;text-align:center;position:relative;border-right:2px solid var(--line)}
+.boss-phase:last-child{border-right:0}
+.boss-phase .phase-pct{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.08em}
+.boss-phase .phase-name{font-size:14px;font-weight:800;color:var(--heading);margin:4px 0 6px}
+.boss-phase .phase-desc{font-size:12px;color:var(--ink-soft);line-height:1.5}
+.boss-phase .phase-vuln{display:inline-block;font-size:11px;font-weight:700;color:var(--moss);background:#eef5ef;padding:3px 8px;border-radius:6px;margin-top:6px}
+body.dark .boss-phase .phase-vuln{background:#1e2a20;color:var(--moss-2)}
+
+/* boss stat table */
+.boss-stat-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+.boss-stat-table th{background:var(--abyss);color:#fff;text-align:left;padding:8px 12px;font-size:12px}
+.boss-stat-table td{padding:8px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.boss-stat-table td b{color:var(--heading)}
+
+/* ===== ENEMY CODEX ===== */
+.enemy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:14px}
+.enemy-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);transition:.2s;border-left:4px solid var(--blood-2)}
+.enemy-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.enemy-card.e-normal{border-left-color:var(--ink-soft)}
+.enemy-card.e-elite{border-left-color:var(--gold)}
+.enemy-card.e-boss{border-left-color:var(--blood-2)}
+.enemy-card.e-ghost{border-left-color:var(--amethyst-2)}
+.enemy-card .enemy-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.enemy-card .enemy-icon{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;flex-shrink:0;background:linear-gradient(135deg,var(--amethyst),var(--amethyst-2))}
+.enemy-card.e-elite .enemy-icon{background:linear-gradient(135deg,var(--gold),var(--gold-2))}
+.enemy-card.e-boss .enemy-icon{background:linear-gradient(135deg,var(--blood),var(--blood-2))}
+.enemy-card h5{font-size:15px;color:var(--heading)}
+.enemy-card .enemy-type{font-size:11px;font-weight:700;color:var(--blood-2)}
+.enemy-card .enemy-body p{font-size:12.5px;color:var(--ink-soft);padding:2px 0}
+.enemy-card .enemy-body p b{color:var(--heading)}
+.enemy-card .enemy-weak{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;margin-top:4px;background:#f0e6d0;color:var(--blood)}
+body.dark .enemy-weak{background:#2a2230}
+
+/* ===== WEAPON EVOLUTION TREE ===== */
+.evo-tree{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:14px}
+.evo-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.2s}
+.evo-card:hover{box-shadow:var(--shadow-lg)}
+.evo-card .evo-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.evo-card .evo-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:16px;color:#fff;flex-shrink:0;background:linear-gradient(135deg,var(--amethyst),var(--amethyst-2))}
+.evo-card .evo-title{font-size:16px;color:var(--heading);font-weight:700}
+.evo-card .evo-sub{font-size:12px;color:var(--ink-soft)}
+.evo-card .evo-nodes{display:flex;flex-direction:column;gap:0;position:relative}
+.evo-node{display:flex;align-items:flex-start;gap:10px;padding:8px 0 8px 24px;position:relative;font-size:13px}
+.evo-node::before{content:"";position:absolute;left:8px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--bone);border:2px solid var(--line);transition:.2s}
+.evo-node.evolved::before{background:var(--gold-2);border-color:var(--gold-2)}
+.evo-node .evo-node-body b{color:var(--heading);display:block;font-size:13px}
+.evo-node .evo-node-body small{color:var(--ink-soft);font-size:11.5px}
+.evo-node:not(:last-child)::after{content:"";position:absolute;left:12px;top:22px;bottom:0;width:2px;background:var(--line)}
+.evo-node.evolved:not(:last-child)::after,.evo-node.collected:not(:last-child)::after{background:var(--gold-2)}
+.evo-node .evo-gem{font-size:10px;font-weight:700;color:var(--amethyst-2);background:#f0e6fa;padding:2px 6px;border-radius:4px;margin-left:4px;white-space:nowrap}
+body.dark .evo-node .evo-gem{background:#2a2230}
+
+/* ===== CHANGELOG PAGE ===== */
+.changelog-list{margin-top:20px}
+.changelog-entry{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;
+  box-shadow:var(--shadow);margin-bottom:14px;position:relative;border-left:4px solid var(--moss-2);
+}
+.changelog-entry .cl-version{font-size:15px;font-weight:800;color:var(--heading)}
+.changelog-entry .cl-date{font-size:12px;color:var(--ink-soft);margin-left:8px}
+.changelog-entry .cl-list{margin-top:10px}
+.changelog-entry .cl-list li{font-size:13.5px;color:var(--ink-soft);padding:4px 0 4px 18px;position:relative;list-style:none}
+.changelog-entry .cl-list li::before{content:"›";position:absolute;left:2px;color:var(--gold);font-weight:800}
+.changelog-entry .cl-list li b{color:var(--heading)}
+.cl-tag-new{font-size:10px;font-weight:800;color:#fff;background:var(--moss);padding:2px 7px;border-radius:4px;margin-left:6px}
+.cl-tag-fix{font-size:10px;font-weight:800;color:#fff;background:var(--frost);padding:2px 7px;border-radius:4px;margin-left:6px}
+.cl-tag-update{font-size:10px;font-weight:800;color:#fff;background:var(--gold);padding:2px 7px;border-radius:4px;margin-left:6px}
+
+/* ===== PWA INSTALL BANNER ===== */
+.pwa-banner{
+  position:fixed;bottom:80px;right:24px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:16px 20px;box-shadow:var(--shadow-lg);z-index:95;
+  display:none;gap:12px;align-items:center;max-width:320px;
+}
+.pwa-banner.show{display:flex}
+.pwa-banner .pb-icon{font-size:28px}
+.pwa-banner .pb-text{font-size:13px;color:var(--ink-soft)}
+.pwa-banner .pb-text b{color:var(--heading);display:block;font-size:14px}
+.pwa-banner button{font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;border:0;cursor:pointer}
+.pwa-banner .pb-install{background:var(--gold);color:#fff}
+.pwa-banner .pb-dismiss{background:var(--bone);color:var(--ink-soft)}
+
+/* ===== TIER LIST ===== */
+.tier-list{margin-top:14px}
+.tier-row{
+  display:flex;align-items:stretch;gap:0;margin-bottom:8px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.tier-label{
+  width:80px;flex-shrink:0;display:grid;place-items:center;font-weight:900;font-size:24px;color:#fff;
+}
+.tier-s .tier-label{background:linear-gradient(135deg,var(--gold),var(--gold-2))}
+.tier-a .tier-label{background:linear-gradient(135deg,var(--amethyst),var(--amethyst-2))}
+.tier-b .tier-label{background:linear-gradient(135deg,var(--frost),#7ab0d8)}
+.tier-c .tier-label{background:linear-gradient(135deg,var(--ink-soft),var(--moss))}
+.tier-content{flex:1;padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--card)}
+.tier-content .tc-item{font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;background:var(--bone);color:var(--ink);border:1px solid var(--line)}
+body.dark .tier-content .tc-item{background:var(--bone)}
+
+/* ===== RESPONSIVE ADDITIONS ===== */
+@media(max-width:520px){
+  .boss-phase-chart{grid-template-columns:1fr}
+  .boss-phase{border-right:0;border-bottom:2px solid var(--line)}
+  .boss-phase:last-child{border-bottom:0}
+  .evo-tree{grid-template-columns:1fr}
+  .calc-row label{min-width:60px;font-size:13px}
+  .progress-overview{padding:18px}
+  .progress-overview .po-grid{grid-template-columns:1fr 1fr}
+  .tier-label{width:50px;font-size:18px}
+  .deck-pool{grid-template-columns:1fr 1fr}
 }

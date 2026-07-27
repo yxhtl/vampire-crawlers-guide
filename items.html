@@ -7,6 +7,8 @@
 <meta name="description" content="Vampire Crawlers 全卡牌图鉴：攻击牌、增益牌、召唤牌、万能牌、武器、宝石数据表，含蓝法消耗、效果、获取方式，可按类型筛选。">
 <meta name="keywords" content="Vampire Crawlers图鉴,卡牌数据,宝石,武器,蓝法,筛选,速查表">
 <link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d0817">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"Vampire Crawlers 卡牌图鉴","inLanguage":"zh-CN","itemListElement":[{"@type":"ListItem","position":1,"name":"快斩"},{"@type":"ListItem","position":2,"name":"力量增益"}]}
 </script>
@@ -21,6 +23,7 @@
       <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
       <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
       <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="bosses.html" data-i18n="nav.bosses">Boss攻略</a>
       <a href="items.html" class="active" data-i18n="nav.items">图鉴速查</a>
     </nav>
     <div class="nav-utils">
@@ -37,25 +40,34 @@
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Codex">图鉴速查</span></div>
     <span class="eyebrow" data-en="Codex">图鉴速查</span>
-    <h2 class="title" data-en="Card Codex &amp; Data Tables">全卡牌图鉴与数据表 <span class="ver-tag" data-en="Verified 2026.07">数据核对 2026.07</span></h2>
-    <p class="subtitle" data-en="Full card database with mana cost, type, effect, and source. Filter by type to find what you need. Data source: Steam description + in-game testing. Items marked [待核实] need further verification.">全卡牌数据库：蓝法消耗、类型、效果与获取方式。按类型筛选快速查找。数据来源：Steam 描述 + 游戏内实测。标注 [待核实] 的条目需进一步验证。</p>
+    <h2 class="title" data-en="Card Codex &amp; Data Tables">全卡牌图鉴与数据表</h2>
+    <p class="subtitle" data-en="Full card database with mana cost, type, effect, and source. Filter by type to find what you need. Note: Card/gem/weapon names are confirmed from the Steam achievement list; specific values (damage/mana/rarity) are inferred and not verified in-game.">全卡牌数据库：蓝法消耗、类型、效果与获取方式。按类型筛选快速查找。注意：卡牌/宝石/武器名称来自 Steam 成就列表，具体数值（伤害/蓝法/稀有度）为推断，未经游戏内核实。</p>
 
-    <div class="chips" id="itemChips">
+    <div class="progress-header">
+      <div style="flex:1;min-width:200px">
+        <div class="pbar" data-progress-bar="codex">
+          <div class="pbar-fill" style="width:0"></div>
+          <div class="pbar-text">0 / 0 (0%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chips" data-chip-group="codex" data-chip-target="#itemsGrid">
       <span class="chip-label" data-en="Type">类型</span>
-      <button class="chip active" data-cat="全部" data-en="All">全部</button>
-      <button class="chip" data-cat="攻击牌" data-en="Attack">攻击牌</button>
-      <button class="chip" data-cat="增益牌" data-en="Buff">增益牌</button>
-      <button class="chip" data-cat="召唤牌" data-en="Summon">召唤牌</button>
-      <button class="chip" data-cat="万能牌" data-en="Wild">万能牌</button>
-      <button class="chip" data-cat="功能牌" data-en="Utility">功能牌</button>
-      <button class="chip" data-cat="武器" data-en="Weapon">武器</button>
-      <button class="chip" data-cat="宝石" data-en="Gem">宝石</button>
+      <button class="chip active" data-chip="all" data-i18n="filter.all">全部</button>
+      <button class="chip" data-chip="attack" data-en="Attack">攻击</button>
+      <button class="chip" data-chip="buff" data-en="Buff">增益</button>
+      <button class="chip" data-chip="summon" data-en="Summon">召唤</button>
+      <button class="chip" data-chip="wild" data-en="Wild">万能</button>
+      <button class="chip" data-chip="utility" data-en="Utility">功能</button>
+      <button class="chip" data-chip="weapon" data-en="Weapon">武器</button>
+      <button class="chip" data-chip="gem" data-en="Gem">宝石</button>
     </div>
 
     <div class="items-grid" id="itemsGrid">
 
       <!-- ===== 攻击牌 ===== -->
-      <div class="item-detail" data-cat="攻击牌">
+      <div class="item-detail" data-chip-tags="attack" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Quick Slash">快斩</h4><span class="rarity tier-1" data-en="Attack · Common">攻击 · 常见</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-1">1</span></p>
@@ -64,45 +76,45 @@
           <p data-en="<b>Source:</b> Starting deck · Level-up picks"><b>获取：</b>初始牌组 · 升级选择</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="攻击牌">
+      <div class="item-detail" data-chip-tags="attack" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Power Slash">强力斩</h4><span class="rarity tier-2" data-en="Attack · Uncommon">攻击 · 普通</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-2">2</span></p>
           <p data-en="<b>Effect:</b> Deal 25 damage, +5 per chain step"><b>效果：</b>造成 25 点伤害，连击每步 +5</p>
           <p data-en="<b>Role:</b> Early chain extender"><b>定位：</b>前期连击延长牌</p>
-          <p data-en="<b>Source:</b> Level-up picks · Library chests"><b>获取：</b>升级选择 · 图书馆宝箱</p>
+          <p data-en="<b>Source:</b> Level-up picks · Inlaid Library chests"><b>获取：</b>升级选择 · 锦钿书库宝箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="攻击牌">
+      <div class="item-detail" data-chip-tags="attack" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Arcane Nova">奥术新星</h4><span class="rarity tier-3" data-en="Attack · Rare">攻击 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Deal 30 AoE damage to all enemies"><b>效果：</b>对所有敌人造成 30 点群攻伤害</p>
           <p data-en="<b>Role:</b> Mid-chain AoE, great for trash clearing"><b>定位：</b>连击中期群攻，清小怪</p>
-          <p data-en="<b>Source:</b> Library chests · Blood Vault drops"><b>获取：</b>图书馆宝箱 · 血库掉落</p>
+          <p data-en="<b>Source:</b> Inlaid Library chests · Dairy Plant drops"><b>获取：</b>锦钿书库宝箱 · 乳品厂掉落</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="攻击牌">
+      <div class="item-detail" data-chip-tags="attack" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Blood Lance">血矛</h4><span class="rarity tier-4" data-en="Attack · Epic">攻击 · 史诗</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-4">4</span></p>
           <p data-en="<b>Effect:</b> Deal 80 damage, ignores armor"><b>效果：</b>造成 80 点伤害，无视护甲</p>
           <p data-en="<b>Role:</b> Chain finisher, boss burst"><b>定位：</b>连击终结牌，Boss 爆发</p>
-          <p data-en="<b>Source:</b> Blood Vault chests · Boss drops"><b>获取：</b>血库宝箱 · Boss 掉落</p>
+          <p data-en="<b>Source:</b> Dairy Plant chests · Boss drops"><b>获取：</b>乳品厂宝箱 · Boss 掉落</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="攻击牌">
+      <div class="item-detail" data-chip-tags="attack" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Apocalypse">末日审判</h4><span class="rarity tier-4" data-en="Attack · Legendary">攻击 · 传说</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-5">5</span></p>
           <p data-en="<b>Effect:</b> Deal 200+ damage, scaled by chain multiplier"><b>效果：</b>造成 200+ 点伤害，受连击倍率加成</p>
           <p data-en="<b>Role:</b> Ultimate finisher — end long chains with this"><b>定位：</b>终极终结牌——长连击的收尾</p>
-          <p data-en="<b>Source:</b> Abyssal Depths · Boss drops [待核实]"><b>获取：</b>深渊底层 · Boss 掉落 [待核实]</p>
+          <p data-en="<b>Source:</b> Gallo Tower · Boss drops"><b>获取：</b>加洛塔 · Boss 掉落</p>
         </div>
       </div>
 
       <!-- ===== 增益牌 ===== -->
-      <div class="item-detail" data-cat="增益牌">
+      <div class="item-detail" data-chip-tags="buff" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Power Buff">力量增益</h4><span class="rarity tier-2" data-en="Buff · Uncommon">增益 · 普通</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-2">2</span></p>
@@ -111,47 +123,47 @@
           <p data-en="<b>Source:</b> Level-up picks · Wooden chests"><b>获取：</b>升级选择 · 木箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="增益牌">
+      <div class="item-detail" data-chip-tags="buff" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Elemental Infusion">元素灌注</h4><span class="rarity tier-3" data-en="Buff · Rare">增益 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Add fire/poison/frost to next 3 cards"><b>效果：</b>下 3 张牌附加火焰/毒素/冰霜效果</p>
           <p data-en="<b>Role:</b> Multi-card buff, great with AoE chains"><b>定位：</b>多牌增益，配合群攻连击</p>
-          <p data-en="<b>Source:</b> Library chests [待核实]"><b>获取：</b>图书馆宝箱 [待核实]</p>
+          <p data-en="<b>Source:</b> Inlaid Library chests"><b>获取：</b>锦钿书库宝箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="增益牌">
+      <div class="item-detail" data-chip-tags="buff" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Blood Frenzy">血腥狂暴</h4><span class="rarity tier-4" data-en="Buff · Epic">增益 · 史诗</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-4">4</span></p>
           <p data-en="<b>Effect:</b> All cards this turn deal ×2 damage"><b>效果：</b>本回合所有牌伤害 ×2</p>
           <p data-en="<b>Role:</b> Turn-defining buff — play early in chain"><b>定位：</b>决定回合走向的增益——连击早期打出</p>
-          <p data-en="<b>Source:</b> Blood Vault chests · Boss drops [待核实]"><b>获取：</b>血库宝箱 · Boss 掉落 [待核实]</p>
+          <p data-en="<b>Source:</b> Dairy Plant chests · Boss drops"><b>获取：</b>乳品厂宝箱 · Boss 掉落</p>
         </div>
       </div>
 
       <!-- ===== 召唤牌 ===== -->
-      <div class="item-detail" data-cat="召唤牌">
+      <div class="item-detail" data-chip-tags="summon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Summon Survivor">召唤幸存者</h4><span class="rarity tier-3" data-en="Summon · Rare">召唤 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Summon a Vampire Survivors character — auto-attacks during Turboturn"><b>效果：</b>召唤一个《吸血鬼幸存者》角色——涡轮模式下自动攻击</p>
           <p data-en="<b>Role:</b> Cascade trigger — survivors chain off each other"><b>定位：</b>连锁触发——幸存者之间互相触发</p>
-          <p data-en="<b>Source:</b> Library chests · Blood Vault"><b>获取：</b>图书馆宝箱 · 血库</p>
+          <p data-en="<b>Source:</b> Inlaid Library chests · Dairy Plant"><b>获取：</b>锦钿书库宝箱 · 乳品厂</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="召唤牌">
+      <div class="item-detail" data-chip-tags="summon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Summon Horde">召唤军团</h4><span class="rarity tier-4" data-en="Summon · Epic">召唤 · 史诗</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-5">5</span></p>
           <p data-en="<b>Effect:</b> Summon 3 survivors at once — triggers massive cascade"><b>效果：</b>一次召唤 3 个幸存者——触发大规模连锁</p>
           <p data-en="<b>Role:</b> Endgame cascade — breaks the game"><b>定位：</b>终局连锁——打破游戏平衡</p>
-          <p data-en="<b>Source:</b> Abyssal Depths · Boss drops [待核实]"><b>获取：</b>深渊底层 · Boss 掉落 [待核实]</p>
+          <p data-en="<b>Source:</b> Gallo Tower · Boss drops"><b>获取：</b>加洛塔 · Boss 掉落</p>
         </div>
       </div>
 
       <!-- ===== 万能牌 ===== -->
-      <div class="item-detail" data-cat="万能牌">
+      <div class="item-detail" data-chip-tags="wild" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Wild Card">万能牌</h4><span class="rarity tier-3" data-en="Wild · Rare">万能 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span style="font-weight:800;color:var(--amethyst-2)" data-en="Any">任意</span></p>
@@ -162,7 +174,7 @@
       </div>
 
       <!-- ===== 功能牌 ===== -->
-      <div class="item-detail" data-cat="功能牌">
+      <div class="item-detail" data-chip-tags="utility" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Quick Draw">快速抽牌</h4><span class="rarity tier-2" data-en="Utility · Uncommon">功能 · 普通</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-1">1</span></p>
@@ -171,65 +183,65 @@
           <p data-en="<b>Source:</b> Level-up picks · Wooden chests"><b>获取：</b>升级选择 · 木箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="功能牌">
+      <div class="item-detail" data-chip-tags="utility" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Mana Surge">蓝法涌动</h4><span class="rarity tier-3" data-en="Utility · Rare">功能 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-2">2</span></p>
           <p data-en="<b>Effect:</b> Gain +3 mana this turn"><b>效果：</b>本回合 +3 蓝法</p>
           <p data-en="<b>Role:</b> Enable high-cost plays early"><b>定位：</b>提前打出高费牌</p>
-          <p data-en="<b>Source:</b> Library chests [待核实]"><b>获取：</b>图书馆宝箱 [待核实]</p>
+          <p data-en="<b>Source:</b> Inlaid Library chests"><b>获取：</b>锦钿书库宝箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="功能牌">
+      <div class="item-detail" data-chip-tags="utility" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Vampiric Shield">吸血护盾</h4><span class="rarity tier-3" data-en="Utility · Rare">功能 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Gain shield equal to 50% of damage dealt this turn"><b>效果：</b>获得本回合造成伤害 50% 的护盾</p>
           <p data-en="<b>Role:</b> Survive boss turns, combo with big damage"><b>定位：</b>扛 Boss 回合，配合大伤害使用</p>
-          <p data-en="<b>Source:</b> Blood Vault chests [待核实]"><b>获取：</b>血库宝箱 [待核实]</p>
+          <p data-en="<b>Source:</b> Dairy Plant chests"><b>获取：</b>乳品厂宝箱</p>
         </div>
       </div>
 
       <!-- ===== 武器 ===== -->
-      <div class="item-detail" data-cat="武器">
+      <div class="item-detail" data-chip-tags="weapon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Knife">飞刀</h4><span class="rarity tier-2" data-en="Weapon · Uncommon">武器 · 普通</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-2">2</span></p>
           <p data-en="<b>Effect:</b> Throw knife — 15 damage, can hit twice with Multistrike Gem"><b>效果：</b>投掷飞刀——15 点伤害，配多重宝石可打两次</p>
           <p data-en="<b>Evolution:</b> → Thousand Edge (rapid multi-hit)"><b>进化：</b>→ 千刃（快速多段打击）</p>
-          <p data-en="<b>Source:</b> Iron chests · Library [待核实]"><b>获取：</b>铁箱 · 图书馆 [待核实]</p>
+          <p data-en="<b>Source:</b> Iron chests · Inlaid Library"><b>获取：</b>铁箱 · 锦钿书库</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="武器">
+      <div class="item-detail" data-chip-tags="weapon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Whip">鞭子</h4><span class="rarity tier-3" data-en="Weapon · Rare">武器 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Hit front 3 enemies — 20 damage each"><b>效果：</b>打前排 3 个敌人——各 20 点伤害</p>
           <p data-en="<b>Evolution:</b> → Bloody Tear (lifesteal AoE)"><b>进化：</b>→ 血泪（吸血群攻）</p>
-          <p data-en="<b>Source:</b> Golden chests · Blood Vault [待核实]"><b>获取：</b>金箱 · 血库 [待核实]</p>
+          <p data-en="<b>Source:</b> Golden chests · Dairy Plant"><b>获取：</b>金箱 · 乳品厂</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="武器">
+      <div class="item-detail" data-chip-tags="weapon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Magic Wand">魔杖</h4><span class="rarity tier-3" data-en="Weapon · Rare">武器 · 稀有</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-3">3</span></p>
           <p data-en="<b>Effect:</b> Projectile — 25 damage, bounces to 2 enemies"><b>效果：</b>射弹——25 点伤害，弹射到 2 个敌人</p>
           <p data-en="<b>Evolution:</b> → Holy Wand (chain lightning)"><b>进化：</b>→ 神杖（连锁闪电）</p>
-          <p data-en="<b>Source:</b> Golden chests [待核实]"><b>获取：</b>金箱 [待核实]</p>
+          <p data-en="<b>Source:</b> Golden chests"><b>获取：</b>金箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="武器">
+      <div class="item-detail" data-chip-tags="weapon" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Axe">战斧</h4><span class="rarity tier-4" data-en="Weapon · Epic">武器 · 史诗</span></div>
         <div class="item-body">
           <p><b data-en="Mana">蓝法</b>: <span class="mana-badge mana-4">4</span></p>
           <p data-en="<b>Effect:</b> Cleave — 50 damage to front enemy + 20 splash"><b>效果：</b>劈砍——前排 50 点伤害 + 20 点溅射</p>
           <p data-en="<b>Evolution:</b> → Vento Sacro (windstorm AoE)"><b>进化：</b>→ 神风（风暴群攻）</p>
-          <p data-en="<b>Source:</b> Blood chests · Boss drops [待核实]"><b>获取：</b>血箱 · Boss 掉落 [待核实]</p>
+          <p data-en="<b>Source:</b> Blood chests · Boss drops"><b>获取：</b>血箱 · Boss 掉落</p>
         </div>
       </div>
 
       <!-- ===== 宝石 ===== -->
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Power Gem">力量宝石</h4><span class="rarity tier-2" data-en="Gem · Uncommon">宝石 · 普通</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> +50% card damage (permanent)"><b>效果：</b>卡牌伤害 +50%（永久）</p>
@@ -237,7 +249,7 @@
           <p data-en="<b>Source:</b> Wooden/Iron chests (all floors)"><b>获取：</b>木箱/铁箱（全层）</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Cost Gem">减费宝石</h4><span class="rarity tier-3" data-en="Gem · Rare">宝石 · 稀有</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> -1 mana cost (permanent)"><b>效果：</b>蓝法消耗 -1（永久）</p>
@@ -245,7 +257,7 @@
           <p data-en="<b>Source:</b> Iron/Golden chests (deep floors)"><b>获取：</b>铁箱/金箱（深层）</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Cascade Gem">连锁宝石</h4><span class="rarity tier-3" data-en="Gem · Rare">宝石 · 稀有</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> Card triggers an extra effect"><b>效果：</b>额外触发一个效果</p>
@@ -253,7 +265,7 @@
           <p data-en="<b>Source:</b> Golden chests (floor 3+)"><b>获取：</b>金箱（3层+）</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Wild Gem">万能宝石</h4><span class="rarity tier-3" data-en="Gem · Rare">宝石 · 稀有</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> +1 Wild card draw chance"><b>效果：</b>万能牌抽率 +1</p>
@@ -261,7 +273,7 @@
           <p data-en="<b>Source:</b> Rare chests"><b>获取：</b>稀有宝箱</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Evolution Gem">进化宝石</h4><span class="rarity tier-4" data-en="Gem · Epic">宝石 · 史诗</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> Enables weapon evolution"><b>效果：</b>启用武器进化</p>
@@ -269,7 +281,7 @@
           <p data-en="<b>Source:</b> Boss drops"><b>获取：</b>Boss 掉落</p>
         </div>
       </div>
-      <div class="item-detail" data-cat="宝石">
+      <div class="item-detail" data-chip-tags="gem" data-track-type="collect" data-track-group="codex">
         <div class="item-head"><h4 data-en="Multistrike Gem">多重宝石</h4><span class="rarity tier-3" data-en="Gem · Rare">宝石 · 稀有</span></div>
         <div class="item-body">
           <p data-en="<b>Effect:</b> Card hits twice"><b>效果：</b>卡牌打两次</p>
@@ -280,7 +292,7 @@
 
     </div>
 
-    <p style="font-size:12px;color:var(--ink-soft);margin-top:20px" data-en="Note: Card names, effects, and stats are based on Steam store description and genre conventions. Items marked [待核实] require in-game verification. Game released April 2026 by poncle.">注：卡牌名称、效果和数据基于 Steam 商店页描述和同类游戏惯例。标注 [待核实] 的条目需游戏内验证。游戏由 poncle 于 2026 年 4 月发售。</p>
+    <p style="font-size:12px;color:var(--ink-soft);margin-top:20px" data-en="Note: Names are confirmed from the Steam achievement list; effect descriptions and values are inferred from store description and player reviews, not verified in-game.">注：名称来自 Steam 成就列表确认，效果描述和数值基于商店页与玩家评论推断，未经游戏内核实。</p>
 
     <div class="cross-links">
       <h4 data-en="Related Guides">相关攻略</h4>
@@ -288,11 +300,12 @@
         <a href="combat.html" data-en="Combat System">卡牌战斗</a>
         <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
         <a href="dungeons.html" data-en="Dungeon Exploration">地牢探索</a>
+        <a href="bosses.html" data-en="Boss Guides">Boss攻略</a>
       </div>
     </div>
 
     <div class="page-nav">
-      <a href="dungeons.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Dungeon Exploration">地牢探索</div></a>
+      <a href="bosses.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Boss Guides">Boss攻略</div></a>
       <a href="index.html"><div class="pn-label" data-en="Home">首页</div><div class="pn-title" data-en="Home">返回首页</div></a>
     </div>
   </div>
@@ -304,11 +317,11 @@
       <div class="foot-brand">
         <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
         <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
-        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle.">本站为玩家非营利性攻略站，游戏版权归 poncle 所有。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle & Nosebleed Interactive.">本站为玩家非营利性攻略站，游戏版权归 poncle & Nosebleed Interactive 所有。</p>
       </div>
       <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
-      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
-      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a></div>
+      <div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="bosses.html" data-en="Bosses">Boss攻略</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="changelog.html" data-i18n="foot.changelog">更新日志</a><a href="https://github.com/yxhtl/vampire-crawlers-guide" target="_blank" data-i18n="foot.feedback">投稿反馈</a></div>
     </div>
     <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
   </div>
@@ -326,18 +339,35 @@
   </div>
 </div>
 <script src="js/common.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
 <script>
-/* Item filter by category */
-document.getElementById("itemChips").addEventListener("click", function(e) {
-  if (e.target.classList.contains("chip")) {
-    document.querySelectorAll("#itemChips .chip").forEach(function(c) { c.classList.remove("active"); });
-    e.target.classList.add("active");
-    var cat = e.target.getAttribute("data-cat");
-    document.querySelectorAll("#itemsGrid .item-detail").forEach(function(card) {
-      card.style.display = (cat === "全部" || card.getAttribute("data-cat") === cat) ? "" : "none";
+/* Auto-assign unique data-track IDs to each item based on heading text */
+(function(){
+  document.querySelectorAll('#itemsGrid .item-detail[data-track-type]').forEach(function(el, i){
+    var h = el.querySelector('h4');
+    var name = h ? (h.getAttribute('data-en') || h.textContent) : ('item-'+i);
+    el.setAttribute('data-track', 'codex-' + name.toLowerCase().replace(/[^a-z0-9]+/g,'-'));
+  });
+  /* Re-apply progress tracking + update bars after IDs are set */
+  if(window.VC_getProgress){
+    var p = window.VC_getProgress();
+    document.querySelectorAll('#itemsGrid .item-detail[data-track]').forEach(function(el){
+      var id = el.getAttribute('data-track');
+      el.classList.toggle('collected', !!p[id]);
+    });
+    /* trigger updateProgressBars by simulating a progress toggle on a dummy */
+    var bars = document.querySelectorAll('[data-progress-bar="codex"]');
+    var total = document.querySelectorAll('#itemsGrid .item-detail[data-track]').length;
+    var done = document.querySelectorAll('#itemsGrid .item-detail.collected').length;
+    var pct = total > 0 ? Math.round(done/total*100) : 0;
+    bars.forEach(function(bar){
+      var fill = bar.querySelector('.pbar-fill');
+      var text = bar.querySelector('.pbar-text');
+      if(fill) fill.style.width = pct + '%';
+      if(text) text.textContent = done + ' / ' + total + '  (' + pct + '%)';
     });
   }
-});
+})();
 </script>
 </body>
 </html>

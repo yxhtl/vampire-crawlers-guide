@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boss 战攻略与机制详解 | Vampire Crawlers 攻略</title>
+<meta name="description" content="Vampire Crawlers 全 Boss 攻略：地穴守护者、血族女族长、深渊泰坦。阶段机制、弱点分析、推荐牌组、掉落奖励一网打尽。">
+<meta name="keywords" content="Vampire Crawlers Boss,地穴守护者,血族女族长,深渊泰坦,Boss攻略,阶段,弱点,掉落">
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d0817">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Vampire Crawlers Boss 战攻略","inLanguage":"zh-CN","about":"Vampire Crawlers Boss 机制、弱点与策略","isPartOf":{"@type":"WebSite","name":"Vampire Crawlers 攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">V</span><span data-i18n="brand">吸血鬼爬行者攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="combat.html" data-i18n="nav.combat">卡牌战斗</a>
+      <a href="deckbuilding.html" data-i18n="nav.deckbuilding">牌组构筑</a>
+      <a href="dungeons.html" data-i18n="nav.dungeons">地牢探索</a>
+      <a href="bosses.html" class="active" data-i18n="nav.bosses">Boss攻略</a>
+      <a href="items.html" data-i18n="nav.items">图鉴速查</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" class="section-anchor" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Bosses">Boss攻略</span></div>
+    <span class="eyebrow" data-en="Boss Guides">Boss攻略</span>
+    <h2 class="title" data-en="Boss Fight Strategies &amp; Mechanics">Boss 战攻略与机制详解</h2>
+    <p class="subtitle" data-en="Every boss in Vampire Crawlers, broken down by phases, weaknesses, and recommended decks. Click bosses to track your progress. Note: Only Door Queen is confirmed from player reviews; other boss names and all stats are inferred and not verified in-game.">每个 Boss 的阶段机制、弱点和推荐牌组全拆解。点击 Boss 卡片追踪击败进度。注意：仅门扉女王名称来自玩家评论确认，其余 Boss 名称和所有数值均为推断，未经游戏内核实。</p>
+
+    <!-- Progress bar -->
+    <div class="progress-header">
+      <div style="flex:1;min-width:200px">
+        <div class="pbar" data-progress-bar="bosses">
+          <div class="pbar-fill" style="width:0"></div>
+          <div class="pbar-text">0 / 0 (0%)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS OVERVIEW ===== -->
+    <div class="boss-grid">
+      <div class="boss-card" data-track="boss-crypt-warden" data-track-type="boss" data-track-group="bosses">
+        <div class="boss-num">BOSS 01</div>
+        <h4 data-en="Crypt Warden">地穴守护者</h4>
+        <div class="boss-area" data-en="Mad Forest · Floor 1 Boss">疯狂森林 · 第 1 层 Boss</div>
+        <p class="boss-strat" data-en="A towering skeleton knight that summons waves of minor skeletons. Relatively straightforward — focus down the adds, then burst the Warden during its vulnerable phase.">巨型骷髅骑士，会召唤小骷髅群。比较直接——先清小怪，在它虚弱阶段爆发输出。</p>
+        <div class="boss-power" data-en="Drops: Evolution Gem (rare)">掉落：进化宝石（稀有）</div>
+      </div>
+      <div class="boss-card" data-track="boss-blood-matriarch" data-track-type="boss" data-track-group="bosses">
+        <div class="boss-num">BOSS 02</div>
+        <h4 data-en="Blood Matriarch">血族女族长</h4>
+        <div class="boss-area" data-en="Dairy Plant · Floor 2 Boss">乳品厂 · 第 2 层 Boss</div>
+        <p class="boss-strat" data-en="A vampiric spellcaster that heals from your damage and summons bats. Bring shield/utility cards and burst her down before she out-sustains you.">吸血型施法者，从你的伤害中回血并召唤蝙蝠。带护盾/功能牌，在她吸血超过你之前爆发击杀。</p>
+        <div class="boss-power" data-en="Drops: Cost Gem · Cascade Gem">掉落：减费宝石 · 连锁宝石</div>
+      </div>
+      <div class="boss-card" data-track="boss-abyssal-titan" data-track-type="boss" data-track-group="bosses">
+        <div class="boss-num">BOSS 03</div>
+        <h4 data-en="Abyssal Titan">深渊泰坦</h4>
+        <div class="boss-area" data-en="Gallo Tower · Floor 3+ Boss">加洛塔 · 第 3 层+ Boss</div>
+        <p class="boss-strat" data-en="A massive giant with earthquake attacks and heavy armor. Requires armor-piercing cards (Blood Lance) and long combo chains to break through. The ultimate test of your deck.">巨型巨人，地震攻击 + 重甲。需要破甲卡（血矛）和长连击链才能打穿。牌组的终极考验。</p>
+        <div class="boss-power" data-en="Drops: Evolution Gem · Legendary cards">掉落：进化宝石 · 传说卡牌</div>
+      </div>
+      <div class="boss-card" data-track="boss-door-queen" data-track-type="boss" data-track-group="bosses">
+        <div class="boss-num">BOSS 04</div>
+        <h4 data-en="Door Queen">门扉女王</h4>
+        <div class="boss-area" data-en="Special Boss · Blocks Floor Progression">特殊 Boss · 阻挡楼层推进</div>
+        <p class="boss-strat" data-en="A notorious boss that ambushes players during floor transitions. Summons aggressive minions and uses door-themed mechanics. Players report this as one of the most frustrating encounters — bring your best deck.">在楼层切换时伏击玩家的恶名 Boss。召唤超雄小怪并使用门扉主题机制。玩家反映这是最恶心的遭遇之一——带上你最强的牌组。</p>
+        <div class="boss-power" data-en="Drops: Rare gems · Legendary cards">掉落：稀有宝石 · 传说卡牌</div>
+      </div>
+    </div>
+    <div id="crypt-warden" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Boss 1: Crypt Warden — Detailed Guide">Boss 1：地穴守护者 — 详细攻略</h4>
+
+      <table class="boss-stat-table">
+        <thead><tr>
+          <th data-en="Stat">属性</th>
+          <th data-en="Value">数值</th>
+          <th data-en="Notes">备注</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="HP">血量</td><td>~500</td><td data-en="Based on player community">基于玩家社区</td></tr>
+          <tr><td data-en="Armor">护甲</td><td data-en="Low">低</td><td data-en="Most attack cards work fine">大部分攻击牌有效</td></tr>
+          <tr><td data-en="Damage">伤害</td><td data-en="Moderate">中等</td><td data-en="15-25 per hit">每次 15-25</td></tr>
+          <tr><td data-en="Phase Count">阶段数</td><td>2</td><td data-en="100%-50%, 50%-0%">100%-50%, 50%-0%</td></tr>
+          <tr><td data-en="Adds">召唤物">召唤物</td><td data-en="Skeletons (3-5)">骷髅（3-5 个）</td><td data-en="Spawn every 2 turns">每 2 回合刷新</td></tr>
+        </tbody>
+      </table>
+
+      <div class="boss-phase-chart">
+        <div class="boss-phase">
+          <div class="phase-pct">100% — 50%</div>
+          <div class="phase-name" data-en="Phase 1: Guard Mode">阶段 1：守护模式</div>
+          <div class="phase-desc" data-en="Melee swings + skeleton summons. Tankable with basic cards.">近战挥砍 + 召唤骷髅。基础牌可扛。</div>
+          <div class="phase-vuln" data-en="Vulnerable to: AoE attacks">弱点：群攻牌</div>
+        </div>
+        <div class="boss-phase">
+          <div class="phase-pct">50% — 0%</div>
+          <div class="phase-name" data-en="Phase 2: Frenzy">阶段 2：狂暴</div>
+          <div class="phase-desc" data-en="Double attack speed, more adds. Burst down fast!">攻速翻倍，召唤更多。快速爆发！</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Long combo chains">弱点：长连击链</div>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="margin-top:20px">
+        <div class="fcard"><h4 data-en="Recommended Cards">推荐卡牌</h4><ul>
+          <li data-en="Arcane Nova — clear skeleton adds fast">奥术新星 — 快速清骷髅</li>
+          <li data-en="Power Slash — reliable single-target damage">强力斩 — 稳定单体伤害</li>
+          <li data-en="Vampiric Shield — survive burst turns">吸血护盾 — 扛爆发回合</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Strategy">打法策略</h4><ul>
+          <li data-en="Clear adds every turn — don't let them pile up">每回合清小怪——别让它们堆积</li>
+          <li data-en="Save your big combo chain for phase 2 (below 50%)">大连击链留到阶段 2（50% 以下）</li>
+          <li data-en="Use Wilds to extend chain past 5 cards for ×5+ multiplier">用万能牌延长连击到 5 张以上获得 ×5+ 倍率</li>
+          <li data-en="Don't waste buffs on adds — save for boss damage">别把增益浪费在小怪上——留给 Boss</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Deck Archetype">推荐流派</h4><ul>
+          <li data-en="Snowball — extend chains with Wilds for big burst">滚雪球流 — 万能牌延长连击爆发</li>
+          <li data-en="Avoid pure summon — adds clutter the board">避免纯召唤流 — 小怪太多占满场地</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS 2: BLOOD MATRIARCH ===== -->
+    <div id="blood-matriarch" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Boss 2: Blood Matriarch — Detailed Guide">Boss 2：血族女族长 — 详细攻略</h4>
+
+      <table class="boss-stat-table">
+        <thead><tr>
+          <th data-en="Stat">属性</th>
+          <th data-en="Value">数值</th>
+          <th data-en="Notes">备注</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="HP">血量</td><td>~800</td><td data-en="Based on player community">基于玩家社区</td></tr>
+          <tr><td data-en="Armor">护甲</td><td data-en="None">无</td><td data-en="All damage goes through">所有伤害直接生效</td></tr>
+          <tr><td data-en="Lifesteal">吸血</td><td data-en="20% of damage dealt">造成伤害的 20%</td><td data-en="Heals from YOUR damage too!">也会从你的伤害中回血！</td></tr>
+          <tr><td data-en="Damage">伤害</td><td data-en="High">高</td><td data-en="25-40 per hit, bat swarm">每次 25-40，蝙蝠群</td></tr>
+          <tr><td data-en="Phase Count">阶段数</td><td>3</td><td data-en="100%-66%, 66%-33%, 33%-0%">100%-66%, 66%-33%, 33%-0%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="boss-phase-chart">
+        <div class="boss-phase">
+          <div class="phase-pct">100% — 66%</div>
+          <div class="phase-name" data-en="Phase 1: Vampire Queen">阶段 1：吸血女王</div>
+          <div class="phase-desc" data-en="Single-target blood magic + lifesteal. Manageable.">单体血魔法 + 吸血。可控。</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Burst damage">弱点：爆发伤害</div>
+        </div>
+        <div class="boss-phase">
+          <div class="phase-pct">66% — 33%</div>
+          <div class="phase-name" data-en="Phase 2: Bat Swarm">阶段 2：蝙蝠群</div>
+          <div class="phase-desc" data-en="Summons bat swarm + shadow bolts. AoE needed!">召唤蝙蝠群 + 暗影箭。需要群攻！</div>
+          <div class="phase-vuln" data-en="Vulnerable to: AoE + Cascade">弱点：群攻 + 连锁</div>
+        </div>
+        <div class="boss-phase">
+          <div class="phase-pct">33% — 0%</div>
+          <div class="phase-name" data-en="Phase 3: Blood Frenzy">阶段 3：血腥狂暴</div>
+          <div class="phase-desc" data-en="Enraged — massive lifesteal. Kill FAST or she outsustains you.">狂暴 — 大量吸血。必须快速击杀否则她吸血超过你。</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Armor-piercing + long chains">弱点：破甲 + 长连击</div>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="margin-top:20px">
+        <div class="fcard"><h4 data-en="Recommended Cards">推荐卡牌</h4><ul>
+          <li data-en="Blood Lance — ignores armor, pure damage burst">血矛 — 无视护甲，纯爆发</li>
+          <li data-en="Arcane Nova — clear bat swarms">奥术新星 — 清蝙蝠群</li>
+          <li data-en="Vampiric Shield — survive her burst turns">吸血护盾 — 扛她的爆发回合</li>
+          <li data-en="Blood Frenzy — ×2 all damage, race her healing">血腥狂暴 — 全场 ×2，与她的回血赛跑</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Strategy">打法策略</h4><ul>
+          <li data-en="DON'T play weak cards that deal low damage — she heals from your damage!">别打低伤牌——她从你的伤害中回血！</li>
+          <li data-en="Save burst for phase 3 — she out-sustains if you drag it out">爆发留到阶段 3 — 拖久了她吸血超过你</li>
+          <li data-en="AoE is critical for phase 2 bat swarm clearing">群攻在阶段 2 清蝙蝠群至关重要</li>
+          <li data-en="Use shield cards on her burst turns (turns 3, 5, 7...)">在她爆发回合（第 3、5、7 回合…）用护盾牌</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Deck Archetype">推荐流派</h4><ul>
+          <li data-en="Snowball — huge combo chain out-damages her healing">滚雪球流 — 大连击链伤害超过她的回血</li>
+          <li data-en="Evolver — evolved weapons with lifesteal counter her">进化流 — 进化武器带吸血克制她</li>
+          <li data-en="Avoid slow decks — she will out-sustain you">避免慢速牌组 — 她会回血超过你</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS 3: ABYSSAL TITAN ===== -->
+    <div id="abyssal-titan" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Boss 3: Abyssal Titan — Detailed Guide">Boss 3：深渊泰坦 — 详细攻略</h4>
+
+      <table class="boss-stat-table">
+        <thead><tr>
+          <th data-en="Stat">属性</th>
+          <th data-en="Value">数值</th>
+          <th data-en="Notes">备注</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="HP">血量</td><td>~1500</td><td data-en="Based on player community">基于玩家社区</td></tr>
+          <tr><td data-en="Armor">护甲</td><td data-en="Very High">极高</td><td data-en="Reduces damage by ~50%">减伤约 50%</td></tr>
+          <tr><td data-en="Damage">伤害</td><td data-en="Very High">极高</td><td data-en="40-60 per hit, earthquake AoE">每次 40-60，地震群攻</td></tr>
+          <tr><td data-en="Phase Count">阶段数</td><td>3</td><td data-en="100%-66%, 66%-33%, 33%-0%">100%-66%, 66%-33%, 33%-0%</td></tr>
+          <tr><td data-en="Special">特殊</td><td data-en="Earthquake: damages all cards on field">地震：伤害场上所有牌</td><td data-en="Every 3rd turn">每 3 回合一次</td></tr>
+        </tbody>
+      </table>
+
+      <div class="boss-phase-chart">
+        <div class="boss-phase">
+          <div class="phase-pct">100% — 66%</div>
+          <div class="phase-name" data-en="Phase 1: Colossus">阶段 1：巨像</div>
+          <div class="phase-desc" data-en="Heavy single-target hits + armor. Chip away with armor-piercing.">重型单次攻击 + 护甲。用破甲牌磨血。</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Armor-piercing">弱点：破甲</div>
+        </div>
+        <div class="boss-phase">
+          <div class="phase-pct">66% — 33%</div>
+          <div class="phase-name" data-en="Phase 2: Earthquake">阶段 2：地震</div>
+          <div class="phase-desc" data-en="Earthquake AoE every 3rd turn + summons rock golems.">每 3 回合地震群攻 + 召唤石巨人。</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Multi-hit + cascade">弱点：多段打击 + 连锁</div>
+        </div>
+        <div class="boss-phase">
+          <div class="phase-pct">33% — 0%</div>
+          <div class="phase-name" data-en="Phase 3: Abyssal Rage">阶段 3：深渊之怒</div>
+          <div class="phase-desc" data-en="Enraged — double damage, continuous earthquakes. ALL-IN burst!">狂暴 — 伤害翻倍，持续地震。全力爆发！</div>
+          <div class="phase-vuln" data-en="Vulnerable to: Everything — race to 0">弱点：全部 — 拼命打到 0</div>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="margin-top:20px">
+        <div class="fcard"><h4 data-en="Recommended Cards">推荐卡牌</h4><ul>
+          <li data-en="Blood Lance — ESSENTIAL: ignores armor, your main damage source">血矛 — 必带：无视护甲，主要输出来源</li>
+          <li data-en="Apocalypse — finisher for phase 3 burst">末日审判 — 阶段 3 爆发终结</li>
+          <li data-en="Vampiric Shield — survive earthquake turns">吸血护盾 — 扛地震回合</li>
+          <li data-en="Blood Frenzy — ×2 damage, essential for DPS check">血腥狂暴 — ×2 伤害，DPS 检测必备</li>
+          <li data-en="Wild Cards — extend chain for maximum multiplier">万能牌 — 延长连击获取最大倍率</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Strategy">打法策略</h4><ul>
+          <li data-en="Blood Lance is MANDATORY — without it, armor halves your damage">血矛是必带的 — 没有它护甲减半你的伤害</li>
+          <li data-en="Save Wilds for a 10+ card chain in phase 3">万能牌留到阶段 3 打 10+ 张连击</li>
+          <li data-en="Shield on earthquake turns (every 3rd) — 40+ AoE damage">地震回合（每 3 回合）用护盾 — 40+ 群攻伤害</li>
+          <li data-en="Phase 3 is a DPS race — go ALL-IN, no defensive plays">阶段 3 是 DPS 竞速 — 全力输出，不要防御</li>
+          <li data-en="Evolved weapons (Vento Sacro, Holy Wand) make this much easier">进化武器（神风、神杖）让这场容易很多</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Deck Archetype">推荐流派</h4><ul>
+          <li data-en="Snowball — 15+ card chain with ×30 multiplier is the safest kill">滚雪球流 — 15+ 张连击 ×30 倍率是最稳的击杀</li>
+          <li data-en="Evolver — evolved weapons pierce armor naturally">进化流 — 进化武器天然破甲</li>
+          <li data-en="Hybrid — evolve weapon + Wild chain for maximum flexibility">混合流 — 进化武器 + 万能连击最大灵活性</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS 4: DOOR QUEEN ===== -->
+    <div id="door-queen" class="section-anchor" style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Boss 4: Door Queen — Detailed Guide">Boss 4：门扉女王 — 详细攻略</h4>
+
+      <table class="boss-stat-table">
+        <thead><tr>
+          <th data-en="Stat">属性</th>
+          <th data-en="Value">数值</th>
+          <th data-en="Notes">备注</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-en="HP">血量</td><td data-en="Unknown">未知</td><td data-en="Based on player community">基于玩家社区</td></tr>
+          <tr><td data-en="Armor">护甲</td><td data-en="Moderate">中等</td><td data-en="Combo chains recommended">推荐连击链</td></tr>
+          <tr><td data-en="Damage">伤害</td><td data-en="High">高</td><td data-en="Summons aggressive adds">召唤超雄小怪</td></tr>
+          <tr><td data-en="Phase Count">阶段数</td><td data-en="Unknown">未知</td><td data-en="More data needed">需更多数据</td></tr>
+          <tr><td data-en="Special">特殊</td><td data-en="Door mechanics: blocks progression">门扉机制：阻挡推进</td><td data-en="Ambushes during floor transitions">楼层切换时伏击</td></tr>
+        </tbody>
+      </table>
+
+      <div class="feature-grid" style="margin-top:20px">
+        <div class="fcard"><h4 data-en="Recommended Cards">推荐卡牌</h4><ul>
+          <li data-en="AoE cards — clear aggressive adds fast">群攻牌 — 快速清超雄小怪</li>
+          <li data-en="Long combo chains — burst through her defenses">长连击链 — 突破她的防御</li>
+          <li data-en="Wild Cards — extend chain for maximum multiplier">万能牌 — 延长连击获取最大倍率</li>
+          <li data-en="Vampiric Shield — survive her burst turns">吸血护盾 — 扛她的爆发回合</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Strategy">打法策略</h4><ul>
+          <li data-en="Players report this as one of the most frustrating bosses — be prepared">玩家反映这是最恶心的 Boss 之一——做好准备</li>
+          <li data-en="Prioritize clearing her aggressive adds — they can overwhelm you">优先清超雄小怪——它们会压垮你</li>
+          <li data-en="Save your best combo chain for when she's vulnerable">最好的连击链留到她虚弱时</li>
+          <li data-en="Overkill her adds for bonus gold — use the economy advantage">Overkill 她的小怪获取额外金币——利用经济优势</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Deck Archetype">推荐流派</h4><ul>
+          <li data-en="Snowball — extend chains with Wilds for big burst">滚雪球流 — 万能牌延长连击爆发</li>
+          <li data-en="Evolver — evolved weapons provide consistent damage">进化流 — 进化武器提供稳定输出</li>
+          <li data-en="Control — manage adds while building your win condition">控制流 — 清小怪同时构建斩杀</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- ===== BOSS TIPS SUMMARY ===== -->
+    <div style="margin-top:50px">
+      <h4 style="color:var(--heading);margin-bottom:14px;font-size:20px" data-en="Universal Boss Tips">通用 Boss 战技巧</h4>
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Combo Chain Priority">连击链优先级</h4><ul>
+          <li data-en="Always play in ascending mana order">始终按蓝法升序出牌</li>
+          <li data-en="Save Wilds for when you're missing a mana cost">万能牌留到缺蓝法值时用</li>
+          <li data-en="Biggest card LAST — maximize the multiplier">最大的牌最后打 — 最大化倍率</li>
+          <li data-en="5+ card chain = ×5 multiplier — always aim for this">5+ 张连击 = ×5 倍率 — 始终以此为目标</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Turboturn Usage">涡轮回合使用</h4><ul>
+          <li data-en="Use Turboturn for the final 2-3 cards of your big combo">大连击最后 2-3 张用涡轮打</li>
+          <li data-en="Cascade bonus adds +15% per extra card beyond 3">连锁奖励每超 3 张牌额外 +15%</li>
+          <li data-en="Don't turbo early — you might miss the optimal play">别早期涡轮 — 可能错过最优解</li>
+          <li data-en="Summons auto-attack during Turbo — free damage!">涡轮下召唤物自动攻击 — 白嫖伤害！</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Survival Tips">生存技巧</h4><ul>
+          <li data-en="Vampiric Shield on big damage turns = survive + counter">大伤害回合用吸血护盾 = 活下来 + 反打</li>
+          <li data-en="Heal cards before phase transitions (50%, 33%)">阶段转换前（50%, 33%）用治疗牌</li>
+          <li data-en="Don't over-commit on turn 1 — save cards for later phases">第 1 回合别全押 — 留牌给后续阶段</li>
+          <li data-en="Utility cards (draw, mana) are crucial for long boss fights">功能牌（抽牌、回蓝）在长 Boss 战中至关重要</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="cross-links">
+      <h4 data-en="Related Guides">相关攻略</h4>
+      <div class="cl-list">
+        <a href="combat.html" data-en="Combat System">卡牌战斗</a>
+        <a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a>
+        <a href="dungeons.html" data-en="Dungeon Exploration">地牢探索</a>
+        <a href="items.html" data-en="Card Codex">卡牌图鉴</a>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <a href="dungeons.html"><div class="pn-label" data-en="Previous">上一篇</div><div class="pn-title" data-en="Dungeon Exploration">地牢探索</div></a>
+      <a href="items.html"><div class="pn-label" data-en="Next">下一篇</div><div class="pn-title" data-en="Card Codex">图鉴速查</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">V</span><span data-en="Vampire Crawlers Guide">吸血鬼爬行者攻略站</span></a>
+        <p data-i18n="foot.branddesc">《Vampire Crawlers》中文玩家攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to poncle & Nosebleed Interactive.">本站为玩家非营利性攻略站，游戏版权归 poncle & Nosebleed Interactive 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="combat.html" data-en="Combat">卡牌战斗</a><a href="deckbuilding.html" data-en="Deck Building">牌组构筑</a></div>
+<div><h4 data-i18n="foot.systems">系统与图鉴</h4><a href="dungeons.html" data-en="Dungeons">地牢探索</a><a href="bosses.html" data-en="Bosses">Boss攻略</a><a href="items.html" data-en="Codex">图鉴速查</a></div>
+<div><h4 data-i18n="foot.about">关于</h4><a href="changelog.html" data-i18n="foot.changelog">更新日志</a><a href="https://github.com/yxhtl/vampire-crawlers-guide" target="_blank" data-i18n="foot.feedback">投稿反馈</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 Vampire Crawlers 攻略站 · 中文攻略 · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索攻略、卡牌、机制…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
+</body>
+</html>
