@@ -1,7 +1,7 @@
 /* ===== Vampire Crawlers Guide - Service Worker ===== */
 /* Offline-first cache strategy for static guide site */
 
-var CACHE_NAME = "vc-guide-v2.4";
+var CACHE_NAME = "vc-guide-v2.4.1";
 var ASSETS = [
   "index.html",
   "getting-started.html",
@@ -32,7 +32,7 @@ self.addEventListener("activate", function(e){
   e.waitUntil(
     caches.keys().then(function(keys){
       return Promise.all(
-        keys.filter(function(k){ return k !== CACHE_NAME; })
+        keys.filter(function(k){ return k.indexOf("vc-guide-") === 0 && k !== CACHE_NAME; })
             .map(function(k){ return caches.delete(k); })
       );
     }).then(function(){
@@ -45,7 +45,7 @@ self.addEventListener("activate", function(e){
 self.addEventListener("fetch", function(e){
   if(e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then(function(cached){
+    caches.open(CACHE_NAME).then(function(cache){ return cache.match(e.request); }).then(function(cached){
       if(cached) return cached;
       return fetch(e.request).then(function(response){
         var url = new URL(e.request.url);
@@ -58,7 +58,7 @@ self.addEventListener("fetch", function(e){
         return response;
       }).catch(function(){
         if(e.request.mode === "navigate"){
-          return caches.match("index.html");
+          return caches.open(CACHE_NAME).then(function(cache){ return cache.match("index.html"); });
         }
       });
     })
